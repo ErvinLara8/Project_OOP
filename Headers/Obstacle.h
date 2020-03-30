@@ -1,0 +1,16 @@
+#ifndef OBSTACLE_H
+#define OBSTACLE_H
+
+#include "Square.h"
+
+class Obstacle: public Square{
+
+    private: 
+
+    public: 
+
+    Obstacle(int x, int y);
+
+};
+
+#endif
