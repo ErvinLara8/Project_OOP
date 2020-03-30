@@ -11,10 +11,13 @@ class Token{
 private: 
 
 string color;
+int number;
 
 public:
 
-void setColor(string);
+Token(string, int);
+
+int getNumber();
 string getColor();
 
 };

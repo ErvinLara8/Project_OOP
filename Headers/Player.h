@@ -16,7 +16,7 @@ vector<Token> tokens;
 
 public:
 
-Player();
+Player(string, int);
 
 virtual void display(); 
 

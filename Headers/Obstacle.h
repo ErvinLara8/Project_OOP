@@ -9,7 +9,9 @@ class Obstacle: public Square{
 
     public: 
 
-    Obstacle(int x, int y);
+    Obstacle(int x, int y, string name);
+
+    virtual void trap();
 
 };
 
