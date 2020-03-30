@@ -7,4 +7,7 @@ int main(){
     std::cout << "LOL" << std::endl;
 
     std::cout << "1234" << std::endl;
+
+	std::cout << "5678" << std::endl;
+
 }
