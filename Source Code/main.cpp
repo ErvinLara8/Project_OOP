@@ -1,13 +1,25 @@
 #include <iostream>
+#include 
 
 int main(){ 
 
-    std::cout << "Hellow World" << std::endl;
+	int nPlayers;
 
-    std::cout << "LOL" << std::endl;
+	cout << "Enter the number of players!";
+	cin >> nPlayers;
+	for (int i; i < nPlayers; i++) {
 
-    std::cout << "1234" << std::endl;
+		cout << "Enter the color for Player" << i << endl;
+	}
 
-	std::cout << "5678" << std::endl;
+	Square* pointer;
+	Game g(nPlayers);
+	pointer = g.board; // pointer to the first square in the 2D array of Squares called board.
+
+
+
+
+
+
 
 }
