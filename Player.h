@@ -8,17 +8,19 @@
 
 using namespace std;
 
-class Player{
+class Player {
 
 private:
 
-vector<Token> tokens; 
+	vector<Token> tokens;
+	int nTokens;
+	string color;
 
 public:
 
-Player(string, int);
+	Player(int n=4);
 
-virtual void display(); 
+	virtual void display();
 
 };
 
