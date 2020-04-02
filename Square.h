@@ -10,21 +10,18 @@ class Square {
 
 private:
 
-// Class Variables
 	int x_location;
 
 	int y_location;
 
+	string name;
+
 	stack<Token> currTokens;
-	
+
 public:
 
+	Square(int x, int y);
 
-
-// Constructor
-	Square(int x=0, int y=0);
-
-// Virtual display
 	virtual void display();
 
 };
