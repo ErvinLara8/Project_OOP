@@ -17,7 +17,7 @@ public:
 
 	virtual void display();
 
-	virtual void hole();
+	//virtual void hole();
 
 };
 

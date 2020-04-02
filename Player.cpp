@@ -4,7 +4,7 @@
 using namespace std;
 
 
-Player::Player(int n=4) {}
+Player::Player(int n) {}
 
 void Player::display() {
 

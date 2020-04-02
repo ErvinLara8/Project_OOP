@@ -4,8 +4,8 @@
 #include <string>
 #include <stack> 
 #include <vector>
-#include "../../../../../Documents/GitHub/Project_OOP/Headers/Player.h"   // DONT KNOW WHY IT FORCED ME TO INCLUDE THIS WAY.
-#include "../../../../../Documents/GitHub/Project_OOP/Headers/Square.h"
+#include "Player.h"   
+#include "Square.h"
 
 
 using namespace std;
@@ -14,15 +14,21 @@ class Game {
 
 private:
 
-	Square board[9][6];
-	int id;
+	Square *** board;
+	int id_of_game;
 	int nPlayers;
 	vector<Player> Ranking;
 
+	// arrays that will hold the courdinates of the traps 
+	int trap_x_coordinate [6] = {-1,-1,-1,-1,-1,-1};
+	int trap_y_coordinate [6] = {-1,-1,-1,-1,-1,-1};
+
 public:
 
-	Game(int nPlayers);
+	Game(int nPlayers, int idGame);
+	~Game();
 
+	void createTrapCourdinates();
 	virtual void show();
 
 };
