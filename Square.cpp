@@ -2,16 +2,19 @@
 
 using namespace std;
 
-
+// constructor 
 Square::Square(int x, int y) {
 	x_location = x;
 	y_location = y;
 }
 
+// display method of the square
 void Square::display() {
 
+	// letter that will determine the x axis 
 	char alphabet; 
 
+	// choosinf the appropriate letter for the x axis
 	switch(x_location){
 			case 0: alphabet = 'S';
 					break;
@@ -33,6 +36,7 @@ void Square::display() {
 					break;
 		}
 
+	// displaying the courdinates of the square 
 	cout << y_location << alphabet << " ";
 
 

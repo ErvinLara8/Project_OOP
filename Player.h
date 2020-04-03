@@ -2,7 +2,6 @@
 #define PLAYER_H
 
 #include "Token.h"
-
 #include <vector>
 #include <string>
 
@@ -12,15 +11,25 @@ class Player {
 
 private:
 
+	// constant of 4 tokens
+	const int NUM_OF_TOKENS = 4;
+
+	// the tokens of the players
 	vector<Token> tokens;
-	int nTokens;
+	
+	// the color of the player 
 	string color;
+
+	// the number of the player
+	int playerNum;
 
 public:
 
-	Player(int n=4);
+	//constructor 
+	Player(int pN = 0);
 
-	virtual void display();
+	// display method 
+	void display();
 
 };
 

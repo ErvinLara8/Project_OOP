@@ -6,22 +6,25 @@
 #include <string>
 #include <stack> 
 
+// main square class
 class Square {
 
-private:
-
+protected:
+	// x location 
 	int x_location;
 
+	// y location
 	int y_location;
 
-	string name;
-
+	// stack of tokens in location
 	stack<Token> currTokens;
 
 public:
 
+	// constructor 
 	Square(int x, int y);
 
+	// display method that can be overwritten 
 	virtual void display();
 
 };

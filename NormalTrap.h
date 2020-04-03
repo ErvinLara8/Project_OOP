@@ -1,0 +1,26 @@
+#ifndef NORMALTRAP_H
+#define NORAMLTRAP_H
+
+#include "Trap.h"
+#include <string>
+
+class NormalTrap : public Trap {
+
+private:
+
+// Fuctionalitie and variables are still to detemrine
+
+// label of trap
+string label; 
+
+public:
+
+    // constructor
+	NormalTrap(int x = 0, int y = 0 , string lb = "");
+
+    // polymorphic method to display
+	virtual void display();
+
+};
+
+#endif

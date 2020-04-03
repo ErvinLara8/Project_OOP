@@ -1,10 +1,14 @@
 
 #include "Player.h"
 #include <string>
+
+
 using namespace std;
 
-
-Player::Player(int n) {}
+// constructor of the Player
+Player::Player(int pN) {
+	playerNum = pN;
+}
 
 void Player::display() {
 

@@ -9,12 +9,14 @@ class Trap : public Square {
 
 private:
 
-string name;
+// name of trap 
+const string NAME = "Tr";
 
 public:
 
-	Trap(int x = 0, int y = 0 , string name = "");
+	Trap(int x = 0, int y = 0);
 
+	// polymorphic method to display
 	virtual void display();
 
 	//virtual void hole();

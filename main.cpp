@@ -5,10 +5,12 @@
 #include <time.h>
 
 using namespace std;
+
 int main(){
 
-    Game lol(4, 123);
+    Game game1(4, 123);
 
-    lol.show();
+    game1.show();
     
+    game1.~Game();
 }

@@ -4,13 +4,13 @@
 using namespace std;
 
 // Constructor
-Trap::Trap(int x, int y, string n ) :Square(x, y) {
-	name = n;
+Trap::Trap(int x, int y) :Square(x, y) {
 }
 
+// overloaded display for trap
 void Trap::display() {
 
-	cout << name;
+	cout << NAME;
 
 	Square::display();
 }
