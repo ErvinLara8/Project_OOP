@@ -64,6 +64,8 @@ Game::Game(int nPlayers ,int gameid) {
 // method that displays the game 
 void Game::show(){
 
+	cout << "\n\nSquare: Valid Path	Tr: Trap	(Nt): Normal Trap	(Bh): Black Hole	(Sp): Shallow Pit	(Dp): Deep Pit	(Wh): Worm Hole \n\n\n";
+
 	// top letter that will be displayed 
 	char alphabet; 
 	for(int i = 0 ; i < 7 ; i++){

@@ -1,5 +1,5 @@
 #ifndef NORMALTRAP_H
-#define NORAMLTRAP_H
+#define NORMALTRAP_H
 
 #include "Trap.h"
 #include <string>
