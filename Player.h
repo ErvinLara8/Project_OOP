@@ -4,6 +4,7 @@
 #include "Token.h"
 #include <vector>
 #include <string>
+#include "Square.h"
 
 using namespace std;
 
@@ -26,10 +27,25 @@ private:
 public:
 
 	//constructor 
-	Player(int pN = 0);
+	Player(int pN = 0, string col = "Blank");
+
+	Player(const Player &);
 
 	// display method 
 	void display();
+
+	// gets initial possition where player places token 
+	int placeHog( Square *** & board);
+
+	Token getToken(int x);
+
+	vector<Token> getAllTokens();
+
+	string getColor();
+
+	int getPlayerNum();
+
+	Player operator=(const Player &);
 
 };
 

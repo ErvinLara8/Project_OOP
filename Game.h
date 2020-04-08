@@ -30,23 +30,28 @@ private:
 	// rannking of players 
 	vector<Player> Ranking;
 
-	// arrays that will hold the courdinates of the traps 
+	// arrays that will hold the coordinates of the traps 
 	int trap_x_coordinate [6] = {-1,-1,-1,-1,-1,-1};
 	int trap_y_coordinate [6] = {-1,-1,-1,-1,-1,-1};
 
 public:
 
 	// main class constructor 
-	Game(int nPlayers, int idGame);
+	Game(int nPlayers, int gameID);
 
 	// class destructor 
 	~Game();
 
-	// method used to created the trap courdinates 
+	// method used to created the trap coordinates 
 	void createTrapCourdinates();
 
 	// method to display the game 
 	void show();
+
+	// method that will make the players place the initial hogs
+	void setInitialPos();
+
+	void showProgress();
 
 };
 

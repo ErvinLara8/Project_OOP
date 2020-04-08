@@ -1,4 +1,6 @@
 #include "Square.h"
+#include "Token.h"
+#include <stack>
 
 using namespace std;
 
@@ -6,13 +8,7 @@ using namespace std;
 Square::Square(int x, int y) {
 	x_location = x;
 	y_location = y;
-}
 
-// display method of the square
-void Square::display() {
-
-	// letter that will determine the x axis 
-	char alphabet; 
 
 	// choosinf the appropriate letter for the x axis
 	switch(x_location){
@@ -35,9 +31,54 @@ void Square::display() {
 			case 8: alphabet = 'Z';
 					break;
 		}
+}
+
+// display method of the square
+void Square::display() {
 
 	// displaying the courdinates of the square 
 	cout << y_location << alphabet << " ";
+}
 
+int Square::getSize(){
+	return currTokens.size();
+}
 
+Token Square::getTopToken(){
+	return currTokens.top();
+}
+
+void Square::pushToken(Token t){
+	currTokens.push(t);
+}
+
+bool Square::isEmpty(){
+	return currTokens.empty();
+}
+
+void Square::showTokens(){
+
+	stack<Token> tempStack;
+
+	Token tempToken;
+
+	for(int i = 0; i < currTokens.size(); i++){
+
+		tempToken = currTokens.top();
+
+		currTokens.pop();
+
+		tempStack.push(tempToken);
+	}
+
+	for(int i =0; i < tempStack.size(); i++){
+
+		tempToken = tempStack.top();
+
+		tempStack.pop();
+
+		cout << alphabet << y_location << ": " << tempToken.getColor();
+
+		currTokens.push(tempToken);
+	}
 }

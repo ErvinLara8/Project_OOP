@@ -15,10 +15,12 @@ private:
 
 public:
 
-	Token(string, int);
+	Token(string col = "blank", int num = 0);
 
 	int getNumber();
 	string getColor();
+
+	Token operator=(const Token &);
 
 };
 

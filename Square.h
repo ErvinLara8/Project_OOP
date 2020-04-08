@@ -19,6 +19,8 @@ protected:
 	// stack of tokens in location
 	stack<Token> currTokens;
 
+	char alphabet;
+
 public:
 
 	// constructor 
@@ -26,6 +28,16 @@ public:
 
 	// display method that can be overwritten 
 	virtual void display();
+
+	int getSize();
+
+	Token getTopToken();
+
+	void pushToken(Token t);
+
+	void showTokens();
+
+	bool isEmpty();
 
 };
 
