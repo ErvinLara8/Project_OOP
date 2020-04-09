@@ -34,7 +34,7 @@ Game::Game(int numOfPlayer ,int gameid) {
 		}else if(i == 3){
 			color = "Purple";
 		}else if(i == 4){
-			color = "Pink";
+			color = "Yellow";
 		}else{
 			color = "White";
 		}

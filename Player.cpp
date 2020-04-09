@@ -64,10 +64,9 @@ int Player::getPlayerNum(){
 // overloaded = operator;
 Player Player::operator=( Player & p){
 
-	// setting all the tokens to be the same 
-	for(vector<Token>::iterator i = p.tokens.begin(); i != p.tokens.end() ; i++){
-		tokens.push_back(*i);
-	}
+	// copying the tokens vector
+	tokens = p.tokens;
+
 	// setting the colors to be the same 
 	color = p.color;
 
