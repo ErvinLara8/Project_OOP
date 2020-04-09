@@ -40,29 +40,40 @@ void Square::display() {
 	cout << y_location << alphabet << " ";
 }
 
+// get size of stack 
 int Square::getSize(){
 	return currTokens.size();
 }
 
+// get the top token 
 Token Square::getTopToken(){
 	return currTokens.top();
 }
 
+// push a token to the stack 
 void Square::pushToken(Token t){
 	currTokens.push(t);
 }
 
+// check if the stack is empty 
 bool Square::isEmpty(){
 	return currTokens.empty();
 }
 
+// show the tokens in the square  
 void Square::showTokens(){
 
+	// dummy stack 
 	stack<Token> tempStack;
 
+	// dummy token 
 	Token tempToken;
 
-	for(int i = 0; i < currTokens.size(); i++){
+	// getting actual size
+	int currSize = currTokens.size();
+
+	// passing all the token to the dummy stack to display them in order 
+	for(int i = 0; i < currSize; i++){
 
 		tempToken = currTokens.top();
 
@@ -71,13 +82,17 @@ void Square::showTokens(){
 		tempStack.push(tempToken);
 	}
 
-	for(int i =0; i < tempStack.size(); i++){
+	// displaying courdinates 
+	cout << alphabet << y_location << ": ";
+
+	// passing the tokens back to the actual stack and displaying it
+	for(int i =0; i < currSize; i++){
 
 		tempToken = tempStack.top();
 
 		tempStack.pop();
 
-		cout << alphabet << y_location << ": " << tempToken.getColor();
+		 cout << tempToken.getColor()[0];
 
 		currTokens.push(tempToken);
 	}

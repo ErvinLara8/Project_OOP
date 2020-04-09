@@ -8,7 +8,23 @@ using namespace std;
 
 int main(){
 
-    Game game1(2, 123);
+    // int numOfPlayers = 0;
+
+    // cout << "Enter Number of Players: ";
+
+    // while (true)
+    // {
+    //     cin >> numOfPlayers;
+
+    //     if(numOfPlayers >1 || numOfPlayers < 7){
+    //         break;
+    //     }else{
+    //         cout << "Please enter a number between 2 and 6: ";
+    //     }
+    // }
+    
+
+    Game game1(4, 123);
 
     game1.show();
 

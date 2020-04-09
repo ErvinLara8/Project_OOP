@@ -51,9 +51,9 @@ public:
 	// method that will make the players place the initial hogs
 	void setInitialPos();
 
+	// method to show how the pieces are moving 
 	void showProgress();
 
 };
 
 #endif
-

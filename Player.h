@@ -29,23 +29,23 @@ public:
 	//constructor 
 	Player(int pN = 0, string col = "Blank");
 
-	Player(const Player &);
-
 	// display method 
 	void display();
 
 	// gets initial possition where player places token 
-	int placeHog( Square *** & board);
+	int placeHog( bool * avaliablePos);
 
+	// get a certain token based on the tokens number 
 	Token getToken(int x);
 
-	vector<Token> getAllTokens();
-
+	// get players color 
 	string getColor();
 
+	// get players number
 	int getPlayerNum();
 
-	Player operator=(const Player &);
+	// overloading equals operator
+	Player operator=( Player &);
 
 };
 
