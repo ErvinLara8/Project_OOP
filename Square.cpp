@@ -52,6 +52,8 @@ Token Square::getTopToken(){
 
 // push a token to the stack 
 void Square::pushToken(Token t){
+
+	t.setLocation(x_location, y_location);
 	currTokens.push(t);
 }
 
@@ -96,4 +98,12 @@ void Square::showTokens(){
 
 		currTokens.push(tempToken);
 	}
+}
+
+Token Square::popToken(){
+	Token dummy = currTokens.top();
+
+	currTokens.pop();
+
+	return dummy;
 }

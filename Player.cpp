@@ -81,3 +81,88 @@ void Player::display() {
 
 	// Display location of tokens and ranking below the board.
 }
+
+void Player::verticalMove(Square *** & board, int ln){
+
+	Token myToken; 
+
+	// this case checking if there are tokens in the moving lane
+	for(int i = 8; i >= 0; i--){
+
+		if(!board[i][ln]->isEmpty()){
+
+			myToken = board[i][ln]->getTopToken();
+
+			if(myToken.getColor() == color){
+				
+				if(!board[(i+1)][ln]->isTrap()){
+					return;
+				}else{
+					if(ln == 0){
+						board[i][ln]->popToken();
+
+						board[i][(ln+1)]->pushToken(myToken);
+
+						return;
+					}else{
+						board[i][ln]->popToken();
+
+						board[i][(ln-1)]->pushToken(myToken);
+
+						return;
+				}
+			}
+			}
+		}
+	}
+
+	// checking the lane above the lane moving 
+	if(ln > 0){
+
+		int lnTop = ln - 1;
+
+		for(int i = 8; i >= 0; i--){
+
+			if(!board[i][lnTop]->isEmpty()){
+
+				myToken = board[i][lnTop]->getTopToken();
+
+				if(myToken.getColor() == color ){
+					
+					if(board[i+1][ln]->isTrap()){
+						return;
+					}else{
+						board[i][lnTop]->popToken();
+						board[i][ln]->pushToken(myToken);
+						return;
+					}
+				}
+			}
+		}
+	}
+
+	if(ln < 5){
+		
+		int lnBot = ln + 1;
+
+		for(int i = 8; i >= 0; i--){
+
+			if(!board[i][lnBot]->isEmpty()){
+
+				myToken = board[i][lnBot]->getTopToken();
+
+				if(myToken.getColor() == color){ 
+					if(board[i+1][ln]->isTrap()){
+						return;
+					}else{
+						board[i][lnBot]->popToken();
+						board[i][ln]->pushToken(myToken);
+						return;
+					}
+				}
+			}
+		}
+
+	}
+
+}

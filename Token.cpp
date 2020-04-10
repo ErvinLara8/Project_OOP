@@ -22,3 +22,13 @@ Token Token::operator=(const Token & t){
 
     return (*this);
 }
+
+int * Token::getLocation() {
+	return location;
+}
+
+bool Token::setLocation(int x, int y) {
+	location[0] = x;
+	location[1] = y;
+	return true;
+}

@@ -10,15 +10,18 @@ class GoodSquare : public Square {
 private:
 
 // name of square
-string name; 
+string name;
 
 public:
 
 	//constructor 
 	GoodSquare(int x = 0, int y=0, string n="");
 
-	// overwritten siplay method 
+	// overwritten display method 
 	virtual void display();
+
+	// just returns boolean - to tell type 
+	virtual bool isTrap();
 
 };
 

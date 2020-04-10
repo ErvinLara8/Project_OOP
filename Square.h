@@ -29,6 +29,8 @@ public:
 	// display method that can be overwritten 
 	virtual void display();
 
+	virtual Token popToken();
+
 	int getSize();
 
 	Token getTopToken();
@@ -38,6 +40,8 @@ public:
 	void showTokens();
 
 	bool isEmpty();
+
+	virtual bool isTrap() = 0;
 
 };
 

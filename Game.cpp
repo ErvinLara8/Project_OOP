@@ -10,7 +10,8 @@
 #include "BlackHole.h"
 #include "DeepPit.h"
 #include "ShallowPit.h"
-#include "WormHole.h"   
+#include "WormHole.h"
+#include "Player.h"
 
 using namespace std;
 
@@ -225,7 +226,6 @@ void Game::setInitialPos(){
 
 		// getting the next player and taking them off the queue 
 		currPlayer = playerTurns.front();
-		playerTurns.pop();
 
 		// if we roll over on players, we switch to the next token  
 		if(i % nPlayers == 0){
@@ -289,6 +289,7 @@ void Game::setInitialPos(){
 		avaliablePos[position] = false;
 
 		// push player to the back of the queue 
+		playerTurns.pop();
 		playerTurns.push(currPlayer);
 	}
 }
@@ -306,10 +307,9 @@ void Game::showProgress(){
 
 		currPlayer = playerTurns.front();
 
-		playerTurns.pop();
-
 		cout << "Player: " << currPlayer.getPlayerNum() << " (" << currPlayer.getColor() << ")	";
 
+		playerTurns.pop();
 		playerTurns.push(currPlayer);
 	}
 
@@ -328,5 +328,55 @@ void Game::showProgress(){
 			}
 		}
 		cout << endl;
+	}
+}
+
+
+void Game::playGame(){
+
+	Player currentPlayer;
+
+	int ln;
+
+	int x = 0;
+
+	while(x < 5){
+
+		currentPlayer = playerTurns.front();
+
+		cout << "\n" << currentPlayer.getColor() << endl;
+
+		cin >> ln;
+
+		currentPlayer.verticalMove(board, ln);
+
+		moveLane(ln);
+
+		showProgress();
+
+
+
+		playerTurns.pop();
+		playerTurns.push(currentPlayer);
+
+
+		x++;
+
+	}
+
+}
+
+void Game::moveLane(int ln) {
+
+	int lane = ln;
+
+	Token dummyToken;
+
+	for(int i = 7; i >= 0 ; i--){
+		if(!board[i][lane]->isEmpty()){
+			dummyToken = board[i][lane]->popToken();
+
+			board[(i+1)][lane]->pushToken(dummyToken);
+		}
 	}
 }

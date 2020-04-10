@@ -12,6 +12,7 @@ private:
 
 	string color;
 	int number;
+	int location [2] = {0,0};
 
 public:
 
@@ -19,9 +20,10 @@ public:
 
 	int getNumber();
 	string getColor();
+	int * getLocation();
+	bool setLocation(int x, int y);
 
 	Token operator=(const Token &);
-
 };
 
 #endif

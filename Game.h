@@ -54,6 +54,10 @@ public:
 	// method to show how the pieces are moving 
 	void showProgress();
 
+	void playGame(); 
+
+	void moveLane(int ln = 0);
+
 };
 
 #endif

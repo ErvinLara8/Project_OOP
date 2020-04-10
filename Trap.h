@@ -21,6 +21,8 @@ public:
 
 	//virtual void hole();
 
+	virtual bool isTrap();
+
 };
 
 #endif

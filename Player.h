@@ -44,6 +44,8 @@ public:
 	// get players number
 	int getPlayerNum();
 
+	void verticalMove(Square *** & board, int ln);
+
 	// overloading equals operator
 	Player operator=( Player &);
 

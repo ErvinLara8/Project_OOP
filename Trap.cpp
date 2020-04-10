@@ -15,4 +15,7 @@ void Trap::display() {
 	Square::display();
 }
 
+bool Trap::isTrap(){
+	return true;
+}
 
