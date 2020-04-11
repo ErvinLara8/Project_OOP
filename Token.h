@@ -13,6 +13,8 @@ private:
 	string color;
 	int number;
 	int location [2] = {0,0};
+	int currentScore;
+	bool moved;
 
 public:
 
@@ -22,6 +24,11 @@ public:
 	string getColor();
 	int * getLocation();
 	bool setLocation(int x, int y);
+	void setScore(int x);
+	int getScore();
+
+	void setMoved(bool x);
+	bool iMoved();
 
 	Token operator=(const Token &);
 };

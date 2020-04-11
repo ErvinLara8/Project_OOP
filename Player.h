@@ -24,6 +24,8 @@ private:
 	// the number of the player
 	int playerNum;
 
+	int totalScore;
+
 public:
 
 	//constructor 
@@ -36,7 +38,7 @@ public:
 	int placeHog( bool * avaliablePos);
 
 	// get a certain token based on the tokens number 
-	Token getToken(int x);
+	Token & getToken(int x);
 
 	// get players color 
 	string getColor();
@@ -48,6 +50,10 @@ public:
 
 	// overloading equals operator
 	Player operator=( Player &);
+
+	int getTotalScore();
+
+	void updateScore();
 
 };
 

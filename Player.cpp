@@ -14,6 +14,7 @@ using namespace std;
 Player::Player(int pN, string col) {
 	playerNum = pN;
 	color = col;
+	totalScore = 0;
 
 	for(int i = 0; i < NUM_OF_TOKENS; i++){
 		Token headHog(color, i); 
@@ -46,8 +47,8 @@ int Player::placeHog( bool * avaliablePos){
 }
 
 // method to get a certain token based on the tokens number 
-Token Player::getToken(int x){
-	return tokens[x];
+Token & Player::getToken(int x){
+	return  tokens[x];
 }
 
 
@@ -87,7 +88,7 @@ void Player::verticalMove(Square *** & board, int ln){
 	Token myToken; 
 
 	// this case checking if there are tokens in the moving lane
-	for(int i = 8; i >= 0; i--){
+	for(int i = 7; i >= 0; i--){
 
 		if(!board[i][ln]->isEmpty()){
 
@@ -96,22 +97,30 @@ void Player::verticalMove(Square *** & board, int ln){
 			if(myToken.getColor() == color){
 				
 				if(!board[(i+1)][ln]->isTrap()){
-					return;
+					continue;
 				}else{
 					if(ln == 0){
-						board[i][ln]->popToken();
 
-						board[i][(ln+1)]->pushToken(myToken);
+						if(board[(i)][ln + 1]->isTrap()){
+							continue;
+						}else{
 
-						return;
+							board[i][ln]->popToken();
+
+							board[i][(ln+1)]->pushToken(myToken);
+						}
+
 					}else{
+
+						if(ln == 5 && board[(i)][ln - 1]->isTrap()){
+							continue;
+						}{
 						board[i][ln]->popToken();
 
 						board[i][(ln-1)]->pushToken(myToken);
-
-						return;
+						}
+					}
 				}
-			}
 			}
 		}
 	}
@@ -121,20 +130,25 @@ void Player::verticalMove(Square *** & board, int ln){
 
 		int lnTop = ln - 1;
 
-		for(int i = 8; i >= 0; i--){
+		for(int i = 7; i >= 0; i--){
 
 			if(!board[i][lnTop]->isEmpty()){
 
 				myToken = board[i][lnTop]->getTopToken();
 
-				if(myToken.getColor() == color ){
-					
-					if(board[i+1][ln]->isTrap()){
-						return;
+				if(myToken.getColor() == color && !board[i+1][ln]->isTrap() ){
+
+					if(!board[i][ln]->isEmpty()){
+
+						if( board[i][ln]->getTopToken().getColor() == color ){
+								continue;
+							}else{
+								board[i][lnTop]->popToken();
+								board[i][ln]->pushToken(myToken);
+							}
 					}else{
 						board[i][lnTop]->popToken();
 						board[i][ln]->pushToken(myToken);
-						return;
 					}
 				}
 			}
@@ -145,24 +159,43 @@ void Player::verticalMove(Square *** & board, int ln){
 		
 		int lnBot = ln + 1;
 
-		for(int i = 8; i >= 0; i--){
+		for(int i = 7; i >= 0; i--){
 
 			if(!board[i][lnBot]->isEmpty()){
 
 				myToken = board[i][lnBot]->getTopToken();
 
-				if(myToken.getColor() == color){ 
-					if(board[i+1][ln]->isTrap()){
-						return;
+				if(myToken.getColor() == color &&  !board[i+1][ln]->isTrap() ){ 
+
+					if(!board[i][ln]->isEmpty()){
+
+						if( board[i][ln]->getTopToken().getColor() == color){
+								continue;
+							}else{
+								board[i][lnBot]->popToken();
+								board[i][ln]->pushToken(myToken);
+							}
 					}else{
 						board[i][lnBot]->popToken();
 						board[i][ln]->pushToken(myToken);
-						return;
 					}
+					
 				}
 			}
 		}
+	}
+}
+
+int Player::getTotalScore(){
+	return totalScore;
+}
+
+void Player::updateScore(){
+
+	totalScore = 0;
+	for(vector<Token>::iterator it = tokens.begin(); it != tokens.end(); it++){
+
+		totalScore += it->getScore();
 
 	}
-
 }

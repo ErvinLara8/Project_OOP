@@ -21,6 +21,8 @@ protected:
 
 	char alphabet;
 
+	int score;
+
 public:
 
 	// constructor 

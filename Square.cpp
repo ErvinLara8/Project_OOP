@@ -13,22 +13,31 @@ Square::Square(int x, int y) {
 	// choosinf the appropriate letter for the x axis
 	switch(x_location){
 			case 0: alphabet = 'S';
+					score = 10;
 					break;
 			case 1: alphabet = 'A';
+					score = 10;
 					break;
 			case 2: alphabet = 'B';
+					score = 20;
 					break;
 			case 3: alphabet = 'C';
+					score = 30;
 					break;
 			case 4: alphabet = 'D';
+					score = 40;
 					break;
 			case 5: alphabet = 'E';
+					score = 50;
 					break;
 			case 6: alphabet = 'F';
+					score = 60;
 					break;
 			case 7: alphabet = 'G';
+					score = 70;
 					break;
 			case 8: alphabet = 'Z';
+					score = 200;
 					break;
 		}
 }
@@ -53,6 +62,7 @@ Token Square::getTopToken(){
 // push a token to the stack 
 void Square::pushToken(Token t){
 
+	t.setScore(score);
 	t.setLocation(x_location, y_location);
 	currTokens.push(t);
 }
@@ -77,7 +87,7 @@ void Square::showTokens(){
 	// passing all the token to the dummy stack to display them in order 
 	for(int i = 0; i < currSize; i++){
 
-		tempToken = currTokens.top();
+		tempToken =  currTokens.top();
 
 		currTokens.pop();
 

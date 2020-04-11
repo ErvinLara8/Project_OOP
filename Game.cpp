@@ -21,6 +21,8 @@ Game::Game(int numOfPlayer ,int gameid) {
 
 	nPlayers = numOfPlayer;
 
+	gameWon = false;
+
 	string color;
 
 	// First, create the instances of players and push them to the queue
@@ -42,6 +44,7 @@ Game::Game(int numOfPlayer ,int gameid) {
 
 		Player p(i+1, color);
 		playerTurns.push(p);
+		// ranking.push_back(&p);
 	}
 
 	// creating the board
@@ -283,7 +286,7 @@ void Game::setInitialPos(){
 
 		
 		// push the current token of the current player in the choosen position 
-		board[0][position]->pushToken(currPlayer.getToken(currTokenNum));
+		board[0][position]->pushToken( currPlayer.getToken(currTokenNum));
 
 		// set that position to false 
 		avaliablePos[position] = false;
@@ -329,6 +332,13 @@ void Game::showProgress(){
 		}
 		cout << endl;
 	}
+
+
+	// cout << "Current Ranks:\n";
+
+	// for(vector<Player>::reverse_iterator it = ranking.rbegin(); it != ranking.rend() ; it++){
+	// 	cout << "Player: " << it->getPlayerNum() << " (" << it->getColor() << ") Score: " << it->getTotalScore() << endl;
+	// }
 }
 
 
@@ -336,11 +346,11 @@ void Game::playGame(){
 
 	Player currentPlayer;
 
-	int ln;
+	int ln = 0;
 
 	int x = 0;
 
-	while(x < 5){
+	while(x < 20){
 
 		currentPlayer = playerTurns.front();
 
@@ -352,9 +362,9 @@ void Game::playGame(){
 
 		moveLane(ln);
 
+		// setRanks();
+
 		showProgress();
-
-
 
 		playerTurns.pop();
 		playerTurns.push(currentPlayer);
@@ -380,3 +390,22 @@ void Game::moveLane(int ln) {
 		}
 	}
 }
+
+// void Game::setRanks(){
+
+// 	for(vector<Player>::iterator it = ranking.begin(); it != ranking.end() ; it++){
+// 		it->updateScore();
+// 	}
+
+// 	sort(ranking.begin(), ranking.end(), sortRanks);
+
+// 	if(ranking.front().getTotalScore() >= 600){
+// 		gameWon = true;
+// 	}
+
+// }
+
+// bool Game::sortRanks( Player & left, Player & right ){
+// 	return left.getTotalScore() < right.getTotalScore();
+// }
+
