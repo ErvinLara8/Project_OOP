@@ -21,6 +21,7 @@ public:
 	Token(string col = "blank", int num = 0);
 
 	int getNumber();
+
 	string getColor();
 	int * getLocation();
 	bool setLocation(int x, int y);

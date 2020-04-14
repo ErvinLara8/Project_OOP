@@ -42,9 +42,8 @@ Game::Game(int numOfPlayer ,int gameid) {
 			color = "White";
 		}
 
-		Player p(i+1, color);
+		Player p(i +1 ,color);
 		playerTurns.push(p);
-		// ranking.push_back(&p);
 	}
 
 	// creating the board
@@ -64,13 +63,13 @@ Game::Game(int numOfPlayer ,int gameid) {
 			if(i == trap_x_coordinate[0] && j == trap_y_coordinate[0]){
 				board[i][j] = new NormalTrap(i,j, "Nt");
 			}else if(i == trap_x_coordinate[1] && j == trap_y_coordinate[1]){
-				board[i][j] = new BlackHole(i,j, "Bh");
+				board[i][j] = new NormalTrap(i,j, "Bh");
 			}else if(i == trap_x_coordinate[2] && j == trap_y_coordinate[2]){
-				board[i][j] = new ShallowPit(i,j, "Sp");
+				board[i][j] = new NormalTrap(i,j, "Sp");
 			}else if(i == trap_x_coordinate[3] && j == trap_y_coordinate[3]){
-				board[i][j] = new DeepPit(i,j, "Dp");
+				board[i][j] = new NormalTrap(i,j, "Dp");
 			}else if(i == trap_x_coordinate[4] && j == trap_y_coordinate[4]){
-				board[i][j] = new WormHole(i,j, "Wh");
+				board[i][j] = new NormalTrap(i,j, "Wh");
 			}else if(i == trap_x_coordinate[5] && j == trap_y_coordinate[5]){
 				board[i][j] = new NormalTrap(i,j, "Nt");
 			}else{
@@ -207,7 +206,7 @@ void Game::setInitialPos(){
 	int totalTurns = nPlayers * 4;
 
 	// Player object that will rotate
-	Player currPlayer;
+	Player  currPlayer;
 
 	// token object that will be the top of the current square 
 	Token currTopOfSquare;
@@ -268,9 +267,8 @@ void Game::setInitialPos(){
 
 			// making the each unquie players array spot false if the previous color is theirs 
 			for(int j = 0; j<6 ; j++){
-				currTopOfSquare = board[0][j]->getTopToken();
 
-				if(currTopOfSquare.getColor() == currPlayer.getColor()){
+				if(board[0][j]->getTopColor() == currPlayer.getColor()){
 					playerAvaliablePos[j] = false;
 				}
 			}
@@ -333,41 +331,50 @@ void Game::showProgress(){
 		cout << endl;
 	}
 
-
-	// cout << "Current Ranks:\n";
-
-	// for(vector<Player>::reverse_iterator it = ranking.rbegin(); it != ranking.rend() ; it++){
-	// 	cout << "Player: " << it->getPlayerNum() << " (" << it->getColor() << ") Score: " << it->getTotalScore() << endl;
-	// }
+	// display the ranks of the players from winner to loser
+	cout << "Current Ranks:\n";
+	for(vector<Player>::reverse_iterator it = ranking.rbegin(); it != ranking.rend(); it++){
+		cout << "Player: " << it->getPlayerNum() << " (" << it->getColor() << ") Score: " << it->getTotalScore() << endl;
+	}
 }
 
 
+// method to test 
 void Game::playGame(){
+
+	srand(time(NULL));
+
+	int dice = 0;
 
 	Player currentPlayer;
 
-	int ln = 0;
-
 	int x = 0;
 
-	while(x < 20){
+	bool movedOponent;
+
+	while(x < 15){
+
+		// dice = (rand() % 6);
+
+		// cin >> dice;
 
 		currentPlayer = playerTurns.front();
 
 		cout << "\n" << currentPlayer.getColor() << endl;
 
-		cin >> ln;
+		movedOponent = currentPlayer.moveToken(board, dice, nPlayers);
 
-		currentPlayer.verticalMove(board, ln);
+		if(movedOponent){
+			updatePlayerScores(dice);
+		}
 
-		moveLane(ln);
-
-		// setRanks();
-
-		showProgress();
 
 		playerTurns.pop();
 		playerTurns.push(currentPlayer);
+
+		setRanks();
+
+		showProgress();
 
 
 		x++;
@@ -376,36 +383,150 @@ void Game::playGame(){
 
 }
 
-void Game::moveLane(int ln) {
+// // method used to move lane 
+// void Game::moveLane(int ln) {
 
-	int lane = ln;
+// 	// lane number 
+// 	int lane = ln;
 
+// 	// token being passed
+// 	Token dummyToken;
+
+// 	// loop that moves all the tokens in a given 
+
+// 	Token p;
+
+// 	for(int i = 7; i >= 0 ; i--){
+
+// 		if(!board[i][lane]->isEmpty()){
+
+// 			cout << (string)typeid(*board[i][lane]).name()<< endl;
+
+// 			if((string) typeid(*board[i][lane]).name() == "10NormalTrap" ||
+// 				(string) typeid(*board[i][lane]).name() == "class ShallowPit" || 
+// 				(string) typeid(*board[i][lane]).name() == "class WormHole" ||
+// 				(string) typeid(*board[i][lane]).name() == "class DeepPit") {
+					
+// 					int sum = 0;
+// 					for(int j = 0; i < 6 ; i++){ sum += board[i][j]->getTokensPast();}
+
+// 					Trap * tp;
+
+// 					tp =  (Trap *) board[i][lane];
+
+
+// 					if( tp->trapPop(sum, nPlayers) ){
+// 						dummyToken = board[i][lane]->popToken();
+// 					}else{
+// 						dummyToken = p;
+// 					}
+// 				}else{
+// 					dummyToken = board[i][lane]->popToken();
+// 				}
+			
+// 				if(dummyToken.getColor() != "blank"){
+// 					board[(i+1)][lane]->pushToken(dummyToken);
+// 				}
+
+// 			// 
+// 			for (int j = 0; j < dummyPlayerVector.size() ; j++)
+// 			{
+// 				if(dummyPlayerVector[j].getColor() == dummyToken.getColor()){
+// 					dummyPlayerVector[j].updateToken(dummyToken);
+// 					break;
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	while (!dummyPlayerVector.empty())
+// 	{
+// 		playerTurns.push(dummyPlayerVector.front());
+// 		dummyPlayerVector.erase(dummyPlayerVector.begin());
+// 	}
+	
+// }
+
+
+void Game::updatePlayerScores(int ln ){
+	// vector used to update the tokens for each player
+	vector<Player> dummyPlayerVector;
+
+		// token being passed
 	Token dummyToken;
 
-	for(int i = 7; i >= 0 ; i--){
-		if(!board[i][lane]->isEmpty()){
-			dummyToken = board[i][lane]->popToken();
+		// player being passed
+	Player tempPlayer;
 
-			board[(i+1)][lane]->pushToken(dummyToken);
+	// passing all the players in the queue to the vector 
+	while(!playerTurns.empty()){
+		tempPlayer = playerTurns.front();
+
+		dummyPlayerVector.push_back(tempPlayer);
+
+		playerTurns.pop();
+	}
+
+	// loop that updates any moven token to their players score
+	for(int i = 0; i < 9; i++){
+
+		if(!board[i][ln]->isEmpty()){
+			dummyToken = board[i][ln]->getTopToken();
+			for (int j = 0; j < dummyPlayerVector.size() ; j++){
+				if(dummyPlayerVector[j].getColor() == dummyToken.getColor()){
+					dummyPlayerVector[j].updateToken(dummyToken);
+					break;
+				}
+			}
 		}
+
+	}
+
+	// putting all players back in the queue
+	while (!dummyPlayerVector.empty())
+	{
+		playerTurns.push(dummyPlayerVector.front());
+		dummyPlayerVector.erase(dummyPlayerVector.begin());
 	}
 }
 
-// void Game::setRanks(){
+void Game::setRanks(){
 
-// 	for(vector<Player>::iterator it = ranking.begin(); it != ranking.end() ; it++){
-// 		it->updateScore();
-// 	}
+	queue<Player> dummyQueue;
 
-// 	sort(ranking.begin(), ranking.end(), sortRanks);
+	Player dummyPlayer;
 
-// 	if(ranking.front().getTotalScore() >= 600){
-// 		gameWon = true;
-// 	}
+	ranking.clear();
 
-// }
+	while(!playerTurns.empty()){
+		dummyPlayer = playerTurns.front();
 
-// bool Game::sortRanks( Player & left, Player & right ){
-// 	return left.getTotalScore() < right.getTotalScore();
-// }
+		dummyPlayer.updateScore();
+
+		ranking.push_back(dummyPlayer);
+
+		playerTurns.pop();
+
+		dummyQueue.push(dummyPlayer);
+	}
+
+	while(!dummyQueue.empty()){
+		dummyPlayer = dummyQueue.front();
+
+		dummyQueue.pop();
+
+		playerTurns.push(dummyPlayer);
+	}
+
+	sort(ranking.begin(), ranking.end(), sortRanks);
+
+	if(ranking[ranking.size() -1].getTotalScore() >= 1500){
+		gameWon = true;
+	}
+
+}
+
+bool Game::sortRanks( Player & left, Player & right ){
+	return left.getTotalScore() < right.getTotalScore();
+}
 

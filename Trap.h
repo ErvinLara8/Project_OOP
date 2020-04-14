@@ -11,6 +11,7 @@ private:
 
 // name of trap 
 const string NAME = "Tr";
+bool trapped = false;
 
 public:
 
@@ -22,6 +23,10 @@ public:
 	//virtual void hole();
 
 	virtual bool isTrap();
+
+	virtual void pushToken(Token & t);
+
+	virtual bool trapPop(int x = 0, int playerNum = 0);
 
 };
 

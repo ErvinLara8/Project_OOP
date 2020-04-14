@@ -28,7 +28,7 @@ private:
 	queue<Player> playerTurns; 
 
 	// rannking of players 
-	vector<Player * > ranking;
+	vector<Player > ranking;
 
 	// arrays that will hold the coordinates of the traps 
 	int trap_x_coordinate [6] = {-1,-1,-1,-1,-1,-1};
@@ -58,11 +58,14 @@ public:
 
 	void playGame(); 
 
-	void moveLane(int ln = 0);
-
+	// method used by sort algorithm to sort the ranks
 	static bool sortRanks( Player & left, Player & right );
 
+	// method used to update the ranks 
 	void setRanks();
+
+	// method to update the players scores 
+	void updatePlayerScores(int ln);
 
 
 

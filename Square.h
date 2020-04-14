@@ -17,7 +17,9 @@ protected:
 	int y_location;
 
 	// stack of tokens in location
-	stack<Token> currTokens;
+	stack<Token > currTokens;
+
+	int tokens_past;
 
 	char alphabet;
 
@@ -33,15 +35,22 @@ public:
 
 	virtual Token popToken();
 
+	virtual Token verticalPop();
+
 	int getSize();
+
+	int getTokensPast();
 
 	Token getTopToken();
 
-	void pushToken(Token t);
+	string getTopColor();
+
+	virtual void pushToken(Token & t);
 
 	void showTokens();
 
 	bool isEmpty();
+
 
 	virtual bool isTrap() = 0;
 

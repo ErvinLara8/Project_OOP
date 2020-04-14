@@ -18,3 +18,11 @@ void NormalTrap::display(){
     Trap::display();
 
 }
+
+bool NormalTrap::trapPop(int x , int playerNum ){
+	// check if all tokens are past this letter.
+	// get sum of all tokens_past of this letter.
+
+    if( x < (4*playerNum - currTokens.size())){return false;}
+	else{return true;}
+}

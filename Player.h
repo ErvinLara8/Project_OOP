@@ -29,7 +29,7 @@ private:
 public:
 
 	//constructor 
-	Player(int pN = 0, string col = "Blank");
+	Player(int pN= 0, string col = "Blank");
 
 	// display method 
 	void display();
@@ -46,7 +46,7 @@ public:
 	// get players number
 	int getPlayerNum();
 
-	void verticalMove(Square *** & board, int ln);
+	bool checkingTopBottom(Square *** & board, int ln);
 
 	// overloading equals operator
 	Player operator=( Player &);
@@ -54,6 +54,14 @@ public:
 	int getTotalScore();
 
 	void updateScore();
+
+	void updateToken(Token t);
+
+	bool moveToken(Square *** & board, int ln, int playerNum);
+
+	void moveOpponentsToken(Square *** & board, int ln);
+
+	bool checkTrapType(Square *** & board, int ln, int x, int playerNum);
 
 };
 

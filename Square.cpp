@@ -8,12 +8,12 @@ using namespace std;
 Square::Square(int x, int y) {
 	x_location = x;
 	y_location = y;
-
+	tokens_past = 0;
 
 	// choosinf the appropriate letter for the x axis
 	switch(x_location){
 			case 0: alphabet = 'S';
-					score = 10;
+					score = 0;
 					break;
 			case 1: alphabet = 'A';
 					score = 10;
@@ -37,7 +37,7 @@ Square::Square(int x, int y) {
 					score = 70;
 					break;
 			case 8: alphabet = 'Z';
-					score = 200;
+					score = 500;
 					break;
 		}
 }
@@ -60,10 +60,11 @@ Token Square::getTopToken(){
 }
 
 // push a token to the stack 
-void Square::pushToken(Token t){
+void Square::pushToken(Token & t){
 
 	t.setScore(score);
 	t.setLocation(x_location, y_location);
+
 	currTokens.push(t);
 }
 
@@ -76,7 +77,7 @@ bool Square::isEmpty(){
 void Square::showTokens(){
 
 	// dummy stack 
-	stack<Token> tempStack;
+	stack<Token > tempStack;
 
 	// dummy token 
 	Token tempToken;
@@ -111,6 +112,27 @@ void Square::showTokens(){
 }
 
 Token Square::popToken(){
+
+	Token dummy = currTokens.top();
+
+	currTokens.pop();
+
+	// added sum of tokens past this letter
+	tokens_past += 1;
+
+	return dummy;
+}
+
+int Square::getTokensPast() {
+	return tokens_past;
+}
+
+string Square::getTopColor(){
+	return currTokens.top().getColor();
+}
+
+Token Square::verticalPop(){
+
 	Token dummy = currTokens.top();
 
 	currTokens.pop();

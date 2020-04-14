@@ -1,5 +1,6 @@
 #include "BlackHole.h"
 #include <iostream>
+#include "Trap.h"
 
 using namespace std;
 

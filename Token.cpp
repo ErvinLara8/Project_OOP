@@ -4,7 +4,7 @@ Token::Token(string col, int num){
 
     color = col;
     moved = false;
-    // currentScore = 0;
+    currentScore = 0;
     number = num;
 }
 
@@ -20,7 +20,10 @@ Token Token::operator=(const Token & t){
 
     color = t.color;
     number = t.number;
-
+    currentScore = t.currentScore;
+    moved = t.moved;
+    location[0] = t.location[0];
+    location[1]= t.location[1];
     return (*this);
 }
 
