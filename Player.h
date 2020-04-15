@@ -59,7 +59,7 @@ public:
 
 	bool moveToken(Square *** & board, int ln, int playerNum);
 
-	void moveOpponentsToken(Square *** & board, int ln);
+	bool moveOpponentsToken(Square *** & board, int ln);
 
 	bool checkTrapType(Square *** & board, int ln, int x, int playerNum);
 

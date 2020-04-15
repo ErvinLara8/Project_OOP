@@ -344,7 +344,7 @@ void Game::playGame(){
 
 	srand(time(NULL));
 
-	int dice = 0;
+	int dice = 2;
 
 	Player currentPlayer;
 
@@ -356,7 +356,7 @@ void Game::playGame(){
 
 		// dice = (rand() % 6);
 
-		// cin >> dice;
+		cin >> dice;
 
 		currentPlayer = playerTurns.front();
 

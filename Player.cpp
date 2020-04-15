@@ -105,7 +105,7 @@ void Player::updateToken(Token t){
 
 bool Player::moveToken(Square *** & board, int ln, int playerNum){
 
-	bool movedOponentsToken = false;
+	bool moved_opponent = false;
 
 	bool initialVertical;
 	Token myToken;
@@ -130,9 +130,9 @@ bool Player::moveToken(Square *** & board, int ln, int playerNum){
 
 						tokens[myToken.getNumber()] = myToken;
 
-						movedOponentsToken = false;
+						moved_opponent = false;
 
-						return movedOponentsToken;
+						return moved_opponent;
 
 					}
 					// else if it is a trap consider these scenarios 
@@ -184,9 +184,9 @@ bool Player::moveToken(Square *** & board, int ln, int playerNum){
 
 						tokens[myToken.getNumber()] = myToken;
 
-						movedOponentsToken = false;
+						moved_opponent = false;
 
-						return movedOponentsToken;
+						return moved_opponent;
 
 					}
 
@@ -199,28 +199,53 @@ bool Player::moveToken(Square *** & board, int ln, int playerNum){
 	// chekcing if there were any tokens behind that i could move forward after my vertical move
 	for(int i = 7; i >= 0; i--){
 		if(!board[i][ln]->isEmpty() && (board[i][ln]->getTopToken().getColor() == color)){
+			
+			if(!board[i][ln]->isTrap()){
+				if(!board[i+1][ln]->isTrap()){
+					myToken = board[i][ln]->popToken();
+					board[i+1][ln]->pushToken(myToken);
+					tokens[myToken.getNumber()] = myToken;
 
-			if(!board[i+1][ln]->isTrap()){
-				myToken = board[i][ln]->popToken();
-				board[i+1][ln]->pushToken(myToken);
-				tokens[myToken.getNumber()] = myToken;
+					moved_opponent = false;
 
-				movedOponentsToken = false;
+					return moved_opponent;
+				}	
+			}else{
 
-				return movedOponentsToken;
+				bool allowed = checkTrapType(board, ln, i, playerNum);
+
+				if(allowed){
+
+					myToken = board[i][ln]->popToken();
+
+					board[i+1][ln]->pushToken(myToken);
+
+					tokens[myToken.getNumber()] = myToken;
+
+					moved_opponent = false;
+
+					return moved_opponent;
+
+				}
 			}
 		}
 	}
 
 	// if we get here there were no tokens we could possibly move forward 
 
+	bool myPiece = false;
 
 	// if we have moved vertically already and there are no tokens of mine to move forward move opponents token 
 	if(initialVertical){
-		moveOpponentsToken(board,ln);
-		movedOponentsToken = true;
+		myPiece = moveOpponentsToken(board,ln);
 
-		return movedOponentsToken;
+		if(myPiece){
+			moved_opponent = false;
+		}else{
+			moved_opponent = true;
+		}
+
+		return moved_opponent;
 	}
 	
 	// else check lanes above or below 
@@ -234,21 +259,49 @@ bool Player::moveToken(Square *** & board, int ln, int playerNum){
 
 		for(int i = 7; i >= 0; i--){
 			if(!board[i][ln]->isEmpty() && (board[i][ln]->getTopToken().getColor() == color)){
+
+				if(!board[i][ln]->isTrap()){
 				myToken = board[i][ln]->popToken();
 				board[i+1][ln]->pushToken(myToken);
-				movedOponentsToken = false;
+				moved_opponent = false;
 
-				return movedOponentsToken;
+				return moved_opponent;
+				}else{
+
+					bool allowed = checkTrapType(board, ln, i, playerNum);
+
+					if(allowed){
+
+						myToken = board[i][ln]->popToken();
+
+						board[i+1][ln]->pushToken(myToken);
+
+						tokens[myToken.getNumber()] = myToken;
+
+						moved_opponent = false;
+
+						return moved_opponent;
+
+					}
+
+				}
 			}
 		}
-	}else{
-		moveOpponentsToken(board,ln);
-		movedOponentsToken = true;
 
-		return movedOponentsToken;
+		return moved_opponent;
+	}else{
+		myPiece = moveOpponentsToken(board,ln);
+
+		if(myPiece){
+			moved_opponent = false;
+		}else{
+			moved_opponent = true;
+		}
+
+		return moved_opponent;
 	}
 
-	return movedOponentsToken;
+	return moved_opponent;
 }
 
 
@@ -268,14 +321,31 @@ bool Player::checkingTopBottom(Square *** & board, int ln){
 			// if the square is not empty and the token on top is my color step here 
 			if(!board[i][lnTop]->isEmpty() && (board[i][lnTop]->getTopToken().getColor() == color)){
 
-				// if the square where im moving to is a not a trap move the token down 
-				if(!board[i+1][ln]->isTrap()){
 
-					myToken = board[i][lnTop]->verticalPop();
+				if(!board[i][ln]->isTrap()){
 
-					board[i][ln]->pushToken(myToken);
+					// if the square where im moving to is a not a trap move the token down 
+					if(!board[i+1][ln]->isTrap()){
 
-					return true;
+						myToken = board[i][lnTop]->verticalPop();
+
+						board[i][ln]->pushToken(myToken);
+
+						return true;
+					}
+				}else{
+					bool allowed = checkTrapType(board, ln, i, playerNum);
+
+					if(allowed){
+
+						myToken = board[i][ln]->popToken();
+
+						board[i+1][ln]->pushToken(myToken);
+
+						tokens[myToken.getNumber()] = myToken;
+
+						return true;
+					}
 				}
 			}			
 		}
@@ -292,34 +362,82 @@ bool Player::checkingTopBottom(Square *** & board, int ln){
 		// if the square is not empty and the token on top is my color step here 
 		if(!board[i][lnBot]->isEmpty() && (board[i][lnBot]->getTopToken().getColor() == color)){
 
-				// if the square where im moving to is a not a trap move the token up
-				if(!board[i+1][ln]->isTrap()){
+				if(!board[i][ln]->isTrap()){
+
+					// if the square where im moving to is a not a trap move the token up
+					if(!board[i+1][ln]->isTrap()){
 
 					myToken = board[i][lnBot]->verticalPop();
 
 					board[i][ln]->pushToken(myToken);
 
 					return true;
+				}else{
+					bool allowed = checkTrapType(board, ln, i, playerNum);
+
+					if(allowed){
+
+						myToken = board[i][ln]->popToken();
+
+						board[i+1][ln]->pushToken(myToken);
+
+						tokens[myToken.getNumber()] = myToken;
+
+						return true;
+
+					}
 				}
 			}			
 		}
+	}
 	}
 	return false;
 }
 
 // method to move opponents token from the back to the front 
-void Player::moveOpponentsToken(Square *** & board, int ln){
+bool Player::moveOpponentsToken(Square *** & board, int ln){
 
 	Token oppToken;
+	bool movedMyOwn = false;
 
 	for(int i = 0; i < 8; i++){
 
 		if(!board[i][ln]->isEmpty()){
-			oppToken = board[i][ln]->popToken();
 
-			board[i+1][ln]->pushToken(oppToken);
+			if(!board[i][ln]->isTrap()){
+				oppToken = board[i][ln]->popToken();
 
-			return;
+				board[i+1][ln]->pushToken(oppToken);
+
+				if(oppToken.getColor() == color){
+
+					tokens[oppToken.getNumber()] = oppToken;
+					movedMyOwn = true;
+				}else{
+					movedMyOwn = false;
+				}
+
+				return movedMyOwn;
+			}else{
+				bool allowed = checkTrapType(board, ln, i, playerNum);
+
+				if(allowed){
+
+					oppToken = board[i][ln]->popToken();
+
+					board[i+1][ln]->pushToken(oppToken);
+
+					if(oppToken.getColor() == color){
+
+						tokens[oppToken.getNumber()] = oppToken;
+						movedMyOwn = true;
+					}else{
+					movedMyOwn = false;
+					}
+
+					return movedMyOwn;
+				}
+			}
 		}
 	}
 }
