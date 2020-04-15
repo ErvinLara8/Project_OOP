@@ -21,6 +21,10 @@ public:
     // polymorphic method to display
 	virtual void display();
 
+    virtual bool trapPop(int x, int playerNum );
+
+    bool wormHoleMove(Square *** & board,  int x, int y, string color);
+
 };
 
 #endif

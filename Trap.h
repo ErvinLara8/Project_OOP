@@ -20,12 +20,13 @@ public:
 	// polymorphic method to display
 	virtual void display();
 
-	//virtual void hole();
-
+	// method to check if it is trap 
 	virtual bool isTrap();
 
+	// method to push token
 	virtual void pushToken(Token & t);
 
+	// method to check is if we can pop the token 
 	virtual bool trapPop(int x = 0, int playerNum = 0);
 
 };

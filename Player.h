@@ -45,24 +45,30 @@ public:
 
 	// get players number
 	int getPlayerNum();
-
-	bool checkingTopBottom(Square *** & board, int ln);
-
+	
 	// overloading equals operator
 	Player operator=( Player &);
 
+	// method to access the total score of the player
 	int getTotalScore();
 
+	// method to update the scores of the player based on their 
 	void updateScore();
 
-	void updateToken(Token t);
+	// method to update the value of a token 
+	void updateToken(Token & t);
 
+	// method to move tokens 
 	bool moveToken(Square *** & board, int ln, int playerNum);
 
-	bool moveOpponentsToken(Square *** & board, int ln);
+	// method to cehck if i can move a token from the bottom lane or the top lane of the moving lane 
+	bool checkingTopBottom(Square *** & board, int ln, int playerNum);
 
+	// method that could move my opponents token 
+	bool moveOpponentsToken(Square *** & board, int ln, int playerNum);
+
+	// method to check trap type 
 	bool checkTrapType(Square *** & board, int ln, int x, int playerNum);
-
 };
 
 #endif

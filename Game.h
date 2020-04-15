@@ -30,6 +30,10 @@ private:
 	// rannking of players 
 	vector<Player > ranking;
 
+	vector<Token> tokensInBoard;
+
+	Player winner;
+
 	// arrays that will hold the coordinates of the traps 
 	int trap_x_coordinate [6] = {-1,-1,-1,-1,-1,-1};
 	int trap_y_coordinate [6] = {-1,-1,-1,-1,-1,-1};
@@ -56,6 +60,7 @@ public:
 	// method to show how the pieces are moving 
 	void showProgress();
 
+	// method to play the game 
 	void playGame(); 
 
 	// method used by sort algorithm to sort the ranks

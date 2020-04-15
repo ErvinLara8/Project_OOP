@@ -12,13 +12,12 @@ NormalTrap::NormalTrap(int x, int y, string lb): Trap(x,y){
 
 // overloaded display that also displays the label of the trap 
 void NormalTrap::display(){
-
-
     cout << '(' << label << ')'; 
     Trap::display();
 
 }
 
+// overloaded trapPop to check if token can be popped 
 bool NormalTrap::trapPop(int x , int playerNum ){
 	// check if all tokens are past this letter.
 	// get sum of all tokens_past of this letter.

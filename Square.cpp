@@ -9,6 +9,7 @@ Square::Square(int x, int y) {
 	x_location = x;
 	y_location = y;
 	tokens_past = 0;
+	score = 0;
 
 	// choosinf the appropriate letter for the x axis
 	switch(x_location){
@@ -65,7 +66,11 @@ void Square::pushToken(Token & t){
 	t.setScore(score);
 	t.setLocation(x_location, y_location);
 
-	currTokens.push(t);
+	Token dummyToken;
+
+	dummyToken = t;
+
+	currTokens.push(dummyToken);
 }
 
 // check if the stack is empty 
@@ -111,6 +116,7 @@ void Square::showTokens(){
 	}
 }
 
+// method to pop a token from the square and also increment the tokens passed it 
 Token Square::popToken(){
 
 	Token dummy = currTokens.top();
@@ -123,14 +129,17 @@ Token Square::popToken(){
 	return dummy;
 }
 
+// method to get the tokens passed 
 int Square::getTokensPast() {
 	return tokens_past;
 }
 
+// method to get the top color 
 string Square::getTopColor(){
 	return currTokens.top().getColor();
 }
 
+// method to pop trap vertically and not increment tokens passed 
 Token Square::verticalPop(){
 
 	Token dummy = currTokens.top();
@@ -138,4 +147,8 @@ Token Square::verticalPop(){
 	currTokens.pop();
 
 	return dummy;
+}
+
+stack<Token> Square::getAllTokens(){
+	return currTokens;
 }

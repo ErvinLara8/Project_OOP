@@ -19,6 +19,15 @@ public:
     // polymorphic method to display
 	virtual void display();
 
+    // overwritten pop method
+    virtual Token popToken();
+
+    // overwritten trap pop 
+    virtual bool trapPop(int x , int playerNum );
+
+    // overwritten verticalPop
+    virtual Token verticalPop();
+
 };
 
 #endif

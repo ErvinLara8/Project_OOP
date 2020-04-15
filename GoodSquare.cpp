@@ -14,6 +14,7 @@ void GoodSquare::display(){
     Square::display();
 }
 
+// method to return if this is a trap 
 bool GoodSquare::isTrap(){
 	return false;
 }

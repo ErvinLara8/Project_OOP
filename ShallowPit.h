@@ -19,6 +19,9 @@ public:
     // polymorphic method to display
 	virtual void display();
 
+    // overloaded trapPop method 
+    virtual bool trapPop(int x , int playerNum );
+
 };
 
 #endif

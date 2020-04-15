@@ -12,6 +12,8 @@
 #include "ShallowPit.h"
 #include "WormHole.h"
 #include "Player.h"
+#include <thread>
+#include <chrono>
 
 using namespace std;
 
@@ -63,13 +65,13 @@ Game::Game(int numOfPlayer ,int gameid) {
 			if(i == trap_x_coordinate[0] && j == trap_y_coordinate[0]){
 				board[i][j] = new NormalTrap(i,j, "Nt");
 			}else if(i == trap_x_coordinate[1] && j == trap_y_coordinate[1]){
-				board[i][j] = new NormalTrap(i,j, "Bh");
+				board[i][j] = new WormHole(i,j, "Wh");
 			}else if(i == trap_x_coordinate[2] && j == trap_y_coordinate[2]){
-				board[i][j] = new NormalTrap(i,j, "Sp");
+				board[i][j] = new ShallowPit(i,j, "Sp");
 			}else if(i == trap_x_coordinate[3] && j == trap_y_coordinate[3]){
-				board[i][j] = new NormalTrap(i,j, "Dp");
+				board[i][j] = new DeepPit(i,j, "Dp");
 			}else if(i == trap_x_coordinate[4] && j == trap_y_coordinate[4]){
-				board[i][j] = new NormalTrap(i,j, "Wh");
+				board[i][j] = new WormHole(i,j, "Wh");
 			}else if(i == trap_x_coordinate[5] && j == trap_y_coordinate[5]){
 				board[i][j] = new NormalTrap(i,j, "Nt");
 			}else{
@@ -111,24 +113,24 @@ void Game::show(){
 		}
 			//if were at the first top left corner display a space 
 			if(i == 0 && j == 0){
-				cout << "         "; 
+				std::cout << "         "; 
 			}
 			// if were at the 0 colum display the number of that column 
 			else if(j == 0){
-				cout << (i-1) << "     ";
+				std::cout << (i-1) << "     ";
 			}
 			//if were at the 0 row display the letter designated to that row 
 			else if(i == 0){
-				cout <<alphabet << "             ";
+				std::cout <<alphabet << "             ";
 			}
 			//else display the square
 			else{
 				board[j-1][i-1]->display();
-				cout << "     "; 			
+				std::cout << "     "; 			
 			}
 		}
 		//print new line 
-		cout << "\n" << endl;
+		std::cout << "\n" << endl;
 	}
 }
 
@@ -292,13 +294,14 @@ void Game::setInitialPos(){
 		// push player to the back of the queue 
 		playerTurns.pop();
 		playerTurns.push(currPlayer);
+
 	}
 }
 
 // method that shows where the tokens are placed 
 void Game::showProgress(){
 
-	cout<< endl << endl;
+	std::cout<< endl << endl;
 
 	// dummy player variable 
 	Player currPlayer;
@@ -308,14 +311,14 @@ void Game::showProgress(){
 
 		currPlayer = playerTurns.front();
 
-		cout << "Player: " << currPlayer.getPlayerNum() << " (" << currPlayer.getColor() << ")	";
+		std::cout << "Player: " << currPlayer.getPlayerNum() << " (" << currPlayer.getColor() << ")	";
 
 		playerTurns.pop();
 		playerTurns.push(currPlayer);
 	}
 
 	// space
-	cout << endl << endl;
+	std::cout << endl << endl;
 
 	// loop through the entier board and if there are tokens in the current square display them, else display a blank 
 	for(int i = 0 ; i < 6 ; i++){
@@ -323,129 +326,75 @@ void Game::showProgress(){
 
 			if(!board[j][i]->isEmpty()){
 				board[j][i]->showTokens();
-				cout << "     ";
+				std::cout << "     ";
 			}else{
-				cout << "     ";
+				std::cout << "     ";
 			}
 		}
-		cout << endl;
+		std::cout << endl;
 	}
 
 	// display the ranks of the players from winner to loser
-	cout << "Current Ranks:\n";
+	std::cout << "Current Ranks:\n";
 	for(vector<Player>::reverse_iterator it = ranking.rbegin(); it != ranking.rend(); it++){
-		cout << "Player: " << it->getPlayerNum() << " (" << it->getColor() << ") Score: " << it->getTotalScore() << endl;
+		std::cout << "Player: " << it->getPlayerNum() << " (" << it->getColor() << ") Score: " << it->getTotalScore() << endl;
 	}
 }
 
 
-// method to test 
+// method to play the game 
 void Game::playGame(){
 
 	srand(time(NULL));
 
-	int dice = 2;
+	// dice 
+	int dice = 0;
 
+	// current players turn 
 	Player currentPlayer;
 
-	int x = 0;
+// `looping till game finishes 
+	while(!gameWon){
 
-	bool movedOponent;
+		// dice is random number between 0 and 5
+		dice = (rand() % 6);
 
-	while(x < 15){
+		std::cout << "Rolled Dice Number: " << dice << endl;
 
-		// dice = (rand() % 6);
-
-		cin >> dice;
-
+	// getting the current players turn
 		currentPlayer = playerTurns.front();
 
-		cout << "\n" << currentPlayer.getColor() << endl;
+	// moving token with current dice roll 
+		currentPlayer.moveToken(board, dice, nPlayers);
 
-		movedOponent = currentPlayer.moveToken(board, dice, nPlayers);
-
-		if(movedOponent){
-			updatePlayerScores(dice);
-		}
-
-
+	// pushing the player to the back of the queue
 		playerTurns.pop();
 		playerTurns.push(currentPlayer);
 
+	// updating the scores 
+		updatePlayerScores(dice);
+
+	// updating the ranks 
 		setRanks();
 
+	// showing the board again 
+		show();
+
+	// showing progress
 		showProgress();
 
-
-		x++;
+		this_thread::sleep_for(chrono::milliseconds(150));
 
 	}
 
+	// getting winner
+	winner = ranking[ranking.size()-1];
+
+	// printing out winner 
+	std::cout<< "Winner is: Player" << winner.getPlayerNum() << " (" << winner.getColor() << ") !!!!" << endl << endl;
+
+
 }
-
-// // method used to move lane 
-// void Game::moveLane(int ln) {
-
-// 	// lane number 
-// 	int lane = ln;
-
-// 	// token being passed
-// 	Token dummyToken;
-
-// 	// loop that moves all the tokens in a given 
-
-// 	Token p;
-
-// 	for(int i = 7; i >= 0 ; i--){
-
-// 		if(!board[i][lane]->isEmpty()){
-
-// 			cout << (string)typeid(*board[i][lane]).name()<< endl;
-
-// 			if((string) typeid(*board[i][lane]).name() == "10NormalTrap" ||
-// 				(string) typeid(*board[i][lane]).name() == "class ShallowPit" || 
-// 				(string) typeid(*board[i][lane]).name() == "class WormHole" ||
-// 				(string) typeid(*board[i][lane]).name() == "class DeepPit") {
-					
-// 					int sum = 0;
-// 					for(int j = 0; i < 6 ; i++){ sum += board[i][j]->getTokensPast();}
-
-// 					Trap * tp;
-
-// 					tp =  (Trap *) board[i][lane];
-
-
-// 					if( tp->trapPop(sum, nPlayers) ){
-// 						dummyToken = board[i][lane]->popToken();
-// 					}else{
-// 						dummyToken = p;
-// 					}
-// 				}else{
-// 					dummyToken = board[i][lane]->popToken();
-// 				}
-			
-// 				if(dummyToken.getColor() != "blank"){
-// 					board[(i+1)][lane]->pushToken(dummyToken);
-// 				}
-
-// 			// 
-// 			for (int j = 0; j < dummyPlayerVector.size() ; j++)
-// 			{
-// 				if(dummyPlayerVector[j].getColor() == dummyToken.getColor()){
-// 					dummyPlayerVector[j].updateToken(dummyToken);
-// 					break;
-// 				}
-// 			}
-// 		}
-// 	}
-
-// 	while (!dummyPlayerVector.empty())
-// 	{
-// 		playerTurns.push(dummyPlayerVector.front());
-// 		dummyPlayerVector.erase(dummyPlayerVector.begin());
-// 	}
-	
-// }
 
 
 void Game::updatePlayerScores(int ln ){
@@ -467,20 +416,22 @@ void Game::updatePlayerScores(int ln ){
 		playerTurns.pop();
 	}
 
-	// loop that updates any moven token to their players score
-	for(int i = 0; i < 9; i++){
-
+	for(int i = 8; i >= 0; i--){
 		if(!board[i][ln]->isEmpty()){
 			dummyToken = board[i][ln]->getTopToken();
-			for (int j = 0; j < dummyPlayerVector.size() ; j++){
-				if(dummyPlayerVector[j].getColor() == dummyToken.getColor()){
-					dummyPlayerVector[j].updateToken(dummyToken);
-					break;
-				}
-			}
+			break;
 		}
-
 	}
+
+	for(int i = 0; i < dummyPlayerVector.size(); i++){
+
+		if(dummyToken.getColor() == dummyPlayerVector[i].getColor()){
+			dummyPlayerVector[i].updateToken(dummyToken);
+			dummyPlayerVector[i].updateScore();
+			break;
+		}
+	}
+	
 
 	// putting all players back in the queue
 	while (!dummyPlayerVector.empty())
@@ -490,42 +441,44 @@ void Game::updatePlayerScores(int ln ){
 	}
 }
 
+// method to set ranks 
 void Game::setRanks(){
 
+	// quete to access each player in the playerturns queue
 	queue<Player> dummyQueue;
 
+	// player that will iterate 
 	Player dummyPlayer;
 
+	// clearing all the ranks 
 	ranking.clear();
 
+	// pushing all the players from one queue to the other and updating their scores and puttin ghtme in ranking 
 	while(!playerTurns.empty()){
 		dummyPlayer = playerTurns.front();
-
 		dummyPlayer.updateScore();
-
 		ranking.push_back(dummyPlayer);
-
 		playerTurns.pop();
-
 		dummyQueue.push(dummyPlayer);
 	}
 
+	// putting all players back tot he normal queue 
 	while(!dummyQueue.empty()){
 		dummyPlayer = dummyQueue.front();
-
 		dummyQueue.pop();
-
 		playerTurns.push(dummyPlayer);
 	}
 
+	// sort algorithm that sorts the player in ranking and sorts them from least to greates based on their score
 	sort(ranking.begin(), ranking.end(), sortRanks);
 
+	// if the last player hasd a score od 1500 or greater they win and game ends
 	if(ranking[ranking.size() -1].getTotalScore() >= 1500){
 		gameWon = true;
 	}
-
 }
 
+// method that sorts the players based on their score 
 bool Game::sortRanks( Player & left, Player & right ){
 	return left.getTotalScore() < right.getTotalScore();
 }
