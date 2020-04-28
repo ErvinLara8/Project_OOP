@@ -23,6 +23,7 @@ bool WormHole::trapPop(int x, int playerNum ){
 	return true;
 }
 
+// Worm Hole pop that bring a token to the begining 
 bool WormHole::wormHoleMove(Square *** & board,  int x, int y, string color){
 
 	srand(time(NULL));

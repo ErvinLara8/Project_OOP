@@ -18,9 +18,6 @@ private:
 	//board class that will be the game board 
 	Square *** board;
 
-	// id of unique game 
-	int id_of_game;
-
 	// number of players and an array to determine which player they are (as in first player is in )
 	int nPlayers;
 
@@ -29,8 +26,6 @@ private:
 
 	// rannking of players 
 	vector<Player > ranking;
-
-	vector<Token> tokensInBoard;
 
 	Player winner;
 
@@ -43,7 +38,7 @@ private:
 public:
 
 	// main class constructor 
-	Game(int nPlayers, int gameID);
+	Game();
 
 	// class destructor 
 	~Game();
@@ -72,7 +67,12 @@ public:
 	// method to update the players scores 
 	void updatePlayerScores(int ln);
 
+	void setPlayers(int numOfPlayers);
 
+	// method to seter the items and players in a table
+	void resetTable();
+
+	Game operator=(Game &);
 
 };
 

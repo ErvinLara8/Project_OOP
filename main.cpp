@@ -23,7 +23,9 @@ int main(){
         }
     }
     
-    Game game1(numOfPlayers, 123);
+    Game game1;
+
+    game1.setPlayers(numOfPlayers);
 
     game1.show();
 

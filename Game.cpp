@@ -7,7 +7,6 @@
 #include <time.h>
 #include <algorithm>    
 #include "NormalTrap.h"
-#include "BlackHole.h"
 #include "DeepPit.h"
 #include "ShallowPit.h"
 #include "WormHole.h"
@@ -17,36 +16,9 @@
 
 using namespace std;
 
-Game::Game(int numOfPlayer ,int gameid) {
-
-	id_of_game = gameid;
-
-	nPlayers = numOfPlayer;
+Game::Game() {
 
 	gameWon = false;
-
-	string color;
-
-	// First, create the instances of players and push them to the queue
-	for (int i = 0; i < nPlayers; i++) {
-
-		if(i == 0){
-			color = "Red";
-		}else if(i == 1){
-			color = "Green";
-		}else if(i == 2){
-			color = "Blue";
-		}else if(i == 3){
-			color = "Purple";
-		}else if(i == 4){
-			color = "Yellow";
-		}else{
-			color = "White";
-		}
-
-		Player p(i +1 ,color);
-		playerTurns.push(p);
-	}
 
 	// creating the board
 	board = new Square **[9];
@@ -356,6 +328,8 @@ void Game::playGame(){
 // `looping till game finishes 
 	while(!gameWon){
 
+		cout << "\n\n";
+
 		// dice is random number between 0 and 5
 		dice = (rand() % 6);
 
@@ -483,3 +457,80 @@ bool Game::sortRanks( Player & left, Player & right ){
 	return left.getTotalScore() < right.getTotalScore();
 }
 
+void Game::setPlayers(int numOfPlayers){
+
+	nPlayers = numOfPlayers; 
+
+	string color;
+
+	// First, create the instances of players and push them to the queue
+	for (int i = 0; i < numOfPlayers; i++) {
+
+		if(i == 0){
+			color = "Red";
+		}else if(i == 1){
+			color = "Green";
+		}else if(i == 2){
+			color = "Blue";
+		}else if(i == 3){
+			color = "Purple";
+		}else if(i == 4){
+			color = "Yellow";
+		}else{
+			color = "White";
+		}
+
+		Player p(i +1 ,color);
+		playerTurns.push(p);
+	}
+
+}
+
+// method that resets the game players 
+void Game::resetTable(){
+
+	while(!playerTurns.empty()){
+		playerTurns.pop();
+	}
+
+	while(!ranking.empty()){
+		ranking.pop_back();
+	}
+
+	gameWon = false;
+
+	for(int i = 0; i < 9; i++){
+		for(int j = 0; j < 6; j++){
+			if(!board[i][j]->isEmpty()){
+				board[i][j]->deleteTokens();
+			}
+		}
+	}	
+}
+
+Game Game::operator=(Game & oldGame){
+
+	for(int i= 0; i < 9; i++){
+		for(int j = 0; j < 6; j++){
+			board[i][j] = oldGame.board[i][j];
+		}
+	}
+
+	playerTurns = oldGame.playerTurns;
+
+	ranking = oldGame.ranking;
+
+	for(int i = 0; i < 6; i++){
+
+		trap_x_coordinate[i] = oldGame.trap_x_coordinate[i];
+		trap_y_coordinate[i] = oldGame.trap_y_coordinate[i];
+	}
+
+	gameWon = oldGame.gameWon;
+
+	nPlayers = oldGame.nPlayers;
+
+	winner = oldGame.winner;
+
+	return (*this);
+}

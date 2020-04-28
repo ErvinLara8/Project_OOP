@@ -63,6 +63,8 @@ public:
 	// method to check if square is a trap
 	virtual bool isTrap() = 0;
 
+	void deleteTokens();
+
 	stack<Token> getAllTokens();
 
 };

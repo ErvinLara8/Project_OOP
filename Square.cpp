@@ -152,3 +152,11 @@ Token Square::verticalPop(){
 stack<Token> Square::getAllTokens(){
 	return currTokens;
 }
+
+void Square::deleteTokens(){
+
+	while(!currTokens.empty()){
+		currTokens.pop();
+	}
+
+}
