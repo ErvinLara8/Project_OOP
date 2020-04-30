@@ -328,12 +328,12 @@ void Game::playGame(){
 // `looping till game finishes 
 	while(!gameWon){
 
-		cout << "\n\n";
+		//cout << "\n\n";
 
 		// dice is random number between 0 and 5
 		dice = (rand() % 6);
 
-		std::cout << "Rolled Dice Number: " << dice << endl;
+		//std::cout << "Rolled Dice Number: " << dice << endl;
 
 	// getting the current players turn
 		currentPlayer = playerTurns.front();
@@ -352,12 +352,12 @@ void Game::playGame(){
 		setRanks();
 
 	// showing the board again 
-		show();
+		//show();
 
 	// showing progress
-		showProgress();
+		//showProgress();
 
-		this_thread::sleep_for(chrono::milliseconds(150));
+		//this_thread::sleep_for(chrono::milliseconds(150));
 
 	}
 
@@ -365,7 +365,7 @@ void Game::playGame(){
 	winner = ranking[ranking.size()-1];
 
 	// printing out winner 
-	std::cout<< "Winner is: Player" << winner.getPlayerNum() << " (" << winner.getColor() << ") !!!!" << endl << endl;
+	// std::cout<< "Winner is: Player" << winner.getPlayerNum() << " (" << winner.getColor() << ") !!!!" << endl << endl;
 
 
 }
@@ -459,26 +459,52 @@ bool Game::sortRanks( Player & left, Player & right ){
 
 void Game::setPlayers(int numOfPlayers){
 
+	srand(time(NULL));
+
 	nPlayers = numOfPlayers; 
 
 	string color;
 
+	// int colorPicked = 0;
+
+	 bool pickedRed, pickedGreen, pickedBlue, pickedPurple, pickedYellow, pickedWhite = false;
+
 	// First, create the instances of players and push them to the queue
 	for (int i = 0; i < numOfPlayers; i++) {
 
-		if(i == 0){
+		// while (true)
+		// {
+			
+		// colorPicked = rand() % 6;
+		
+
+		if(i == 0 ){
 			color = "Red";
-		}else if(i == 1){
+			pickedRed = true;
+			// break;
+		}else if(i== 1 ){
 			color = "Green";
-		}else if(i == 2){
+			pickedGreen = true;
+			// break;
+		}else if(i == 2 ){
 			color = "Blue";
-		}else if(i == 3){
+			pickedBlue = true;
+			// break;
+		}else if(i == 3 ){
 			color = "Purple";
-		}else if(i == 4){
+			pickedPurple = true;
+			// break;
+		}else if(i== 4 ){
 			color = "Yellow";
-		}else{
+			pickedYellow = true;
+			// break;
+		}else if(i== 5){
 			color = "White";
+			pickedWhite = true;
+			// break;
 		}
+
+		// }
 
 		Player p(i +1 ,color);
 		playerTurns.push(p);
@@ -506,6 +532,10 @@ void Game::resetTable(){
 			}
 		}
 	}	
+}
+
+string Game::getWinningPlayerColor(){
+	return winner.getColor();
 }
 
 Game Game::operator=(Game & oldGame){

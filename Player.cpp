@@ -65,7 +65,7 @@ int Player::getPlayerNum(){
 }
 
 // overloaded = operator;
-Player Player::operator=( Player & p){
+Player Player::operator=( const Player & p){
 
 	// copying the tokens vector
 	tokens = p.tokens;

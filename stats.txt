@@ -1,0 +1,143 @@
+Current Time: 0
+
+Number of Game Tables: 6
+Number of Players: 30
+Number of Games: 0
+Current Game Winners: 
+Red 0
+Blue 0
+Purple 0
+Green 0
+Yellow 0
+White 0
+
+Current Time: 1
+
+Number of Game Tables: 6
+Number of Players: 30
+Number of Games: 0
+Current Game Winners: 
+Red 0
+Blue 0
+Purple 0
+Green 0
+Yellow 0
+White 0
+
+Current Time: 2
+
+Number of Game Tables: 6
+Number of Players: 30
+Number of Games: 0
+Current Game Winners: 
+Red 0
+Blue 0
+Purple 0
+Green 0
+Yellow 0
+White 0
+
+Current Time: 3
+
+Number of Game Tables: 6
+Number of Players: 30
+Number of Games: 0
+Current Game Winners: 
+Red 0
+Blue 0
+Purple 0
+Green 0
+Yellow 0
+White 0
+
+Current Time: 4
+
+Number of Game Tables: 6
+Number of Players: 30
+Number of Games: 0
+Current Game Winners: 
+Red 0
+Blue 0
+Purple 0
+Green 0
+Yellow 0
+White 0
+
+Current Time: 5
+
+Number of Game Tables: 6
+Number of Players: 30
+Number of Games: 0
+Current Game Winners: 
+Red 0
+Blue 0
+Purple 0
+Green 0
+Yellow 0
+White 0
+
+Current Time: 6
+
+Number of Game Tables: 6
+Number of Players: 24
+Number of Games: 6
+Current Game Winners: Game Table 1 (Red)       Game Table 2 (Red)       Game Table 3 (Red)       Game Table 4 (Red)       Game Table 5 (Red)       Game Table 6 (Red)       
+Red 6
+Blue 0
+Purple 0
+Green 0
+Yellow 0
+White 0
+
+Current Time: 7
+
+Number of Game Tables: 6
+Number of Players: 24
+Number of Games: 6
+Current Game Winners: 
+Red 6
+Blue 0
+Purple 0
+Green 0
+Yellow 0
+White 0
+
+Current Time: 8
+
+Number of Game Tables: 6
+Number of Players: 24
+Number of Games: 6
+Current Game Winners: 
+Red 6
+Blue 0
+Purple 0
+Green 0
+Yellow 0
+White 0
+
+Current Time: 9
+
+Number of Game Tables: 6
+Number of Players: 24
+Number of Games: 6
+Current Game Winners: 
+Red 6
+Blue 0
+Purple 0
+Green 0
+Yellow 0
+White 0
+
+Current Time: 10
+
+Number of Game Tables: 6
+Number of Players: 18
+Number of Games: 12
+Current Game Winners: Game Table 1 (Purple)       Game Table 2 (Purple)       Game Table 3 (Purple)       Game Table 4 (Purple)       Game Table 5 (Purple)       Game Table 6 (Purple)       
+Red 6
+Blue 0
+Purple 6
+Green 0
+Yellow 0
+White 0
+

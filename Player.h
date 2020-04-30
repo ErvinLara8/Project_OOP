@@ -47,7 +47,7 @@ public:
 	int getPlayerNum();
 	
 	// overloading equals operator
-	Player operator=( Player &);
+	Player operator=( const  Player &);
 
 	// method to access the total score of the player
 	int getTotalScore();

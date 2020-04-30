@@ -72,6 +72,8 @@ public:
 	// method to seter the items and players in a table
 	void resetTable();
 
+	string getWinningPlayerColor();
+
 	Game operator=(Game &);
 
 };
