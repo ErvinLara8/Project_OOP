@@ -3,13 +3,20 @@
 #include "GameTable.h"
 #include <unordered_map> 
 #include <fstream>
-#include <stdlib.h> 
+// #include <stdlib.h> 
 #include <iostream>
+// #include <time.h>
+#include <algorithm>    // std::random_shuffle
+#include <chrono>       // std::chrono::system_clock
+#include <random>       // std::default_random_engine
+#include <vector>
 
 using namespace std;
 
 // constructor 
 Arcade::Arcade(ofstream& x):output(x){}
+
+int myrandom (int i) { return rand()%i;}
 
 // methld to initialize the arcade
 void Arcade::Initialize(int t){
@@ -40,6 +47,16 @@ void Arcade::Initialize(int t){
 	gt5 = new GameTable(5);
 	gt6 = new GameTable(6);
 
+    // random number generator 
+
+    vector <int> ranNumbers;
+
+    for (int i=2; i<7; ++i) ranNumbers.push_back(i);
+
+    unsigned seed = chrono::system_clock::now().time_since_epoch().count();
+
+    auto rng = std::default_random_engine (seed);
+
     // int that will hold the random number of players generated 
     int numOfPlayers = 0;
 
@@ -48,31 +65,40 @@ void Arcade::Initialize(int t){
     // loop that sets the umber of people in each game table 
     for(int i = 0; i < 6 ; i++){
         
-        // picking a random number between 2 and 6
-        numOfPlayers = (rand() % 4)+2;
+        shuffle (ranNumbers.begin(), ranNumbers.end(), rng);
+
+        numOfPlayers = ranNumbers[0];
+
+        cout << "*" << numOfPlayers << "*" << endl;
 
         // initilaizing each game table to their appropriate number of people and putting it in the timing wheel 
         if(i == 0){
+            //cout << i <<"*" << numOfPlayers << "i*" << endl;
             gt1->setNumPlayers(numOfPlayers);
             TW->updateInitialPlayers(numOfPlayers);
             TW->insert(numOfPlayers, gt1);
         }else if(i == 1){
+            //cout << i <<"*" << numOfPlayers << "*" << endl;
             gt2->setNumPlayers(numOfPlayers);
             TW->updateInitialPlayers(numOfPlayers);
             TW->insert(numOfPlayers, gt2);
         }else if(i ==2){
+            //cout << i <<"*" << numOfPlayers << "*" << endl;
             gt3->setNumPlayers(numOfPlayers);
             TW->updateInitialPlayers(numOfPlayers);
             TW->insert(numOfPlayers, gt3);
         }else if(i == 3){
+            //cout << i <<"*" << numOfPlayers << "*" << endl;
             gt4->setNumPlayers(numOfPlayers);
             TW->updateInitialPlayers(numOfPlayers);
             TW->insert(numOfPlayers, gt4);
         }else if(i == 4){
+            //cout << i <<"*" << numOfPlayers << "*" << endl;
             gt5->setNumPlayers(numOfPlayers);
             TW->updateInitialPlayers(numOfPlayers);
             TW->insert(numOfPlayers, gt5);
         }else{
+            //cout << i <<"*" << numOfPlayers << "*" << endl;
             gt6->setNumPlayers(numOfPlayers);
             TW->updateInitialPlayers(numOfPlayers);
             TW->insert(numOfPlayers, gt6);

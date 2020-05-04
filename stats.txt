@@ -1,7 +1,7 @@
 Current Time: 0
 
 Number of Game Tables: 6
-Number of Players: 30
+Number of Players: 21
 Number of Games: 0
 Current Game Winners: 
 Red 0
@@ -14,7 +14,7 @@ White 0
 Current Time: 1
 
 Number of Game Tables: 6
-Number of Players: 30
+Number of Players: 21
 Number of Games: 0
 Current Game Winners: 
 Red 0
@@ -27,7 +27,7 @@ White 0
 Current Time: 2
 
 Number of Game Tables: 6
-Number of Players: 30
+Number of Players: 21
 Number of Games: 0
 Current Game Winners: 
 Red 0
@@ -40,104 +40,1274 @@ White 0
 Current Time: 3
 
 Number of Game Tables: 6
-Number of Players: 30
-Number of Games: 0
-Current Game Winners: 
-Red 0
+Number of Players: 28
+Number of Games: 3
+Current Game Winners: Game Table 1 (Red)       Game Table 5 (White)       Game Table 6 (Red)       
+Red 2
 Blue 0
 Purple 0
 Green 0
 Yellow 0
-White 0
+White 1
 
 Current Time: 4
 
 Number of Game Tables: 6
-Number of Players: 30
-Number of Games: 0
-Current Game Winners: 
-Red 0
+Number of Players: 27
+Number of Games: 4
+Current Game Winners: Game Table 2 (Red)       
+Red 3
 Blue 0
 Purple 0
 Green 0
 Yellow 0
-White 0
+White 1
 
 Current Time: 5
 
 Number of Game Tables: 6
-Number of Players: 30
-Number of Games: 0
+Number of Players: 27
+Number of Games: 4
 Current Game Winners: 
-Red 0
+Red 3
 Blue 0
 Purple 0
 Green 0
 Yellow 0
-White 0
+White 1
 
 Current Time: 6
 
 Number of Game Tables: 6
-Number of Players: 24
-Number of Games: 6
-Current Game Winners: Game Table 1 (Red)       Game Table 2 (Red)       Game Table 3 (Red)       Game Table 4 (Red)       Game Table 5 (Red)       Game Table 6 (Red)       
-Red 6
-Blue 0
+Number of Players: 32
+Number of Games: 7
+Current Game Winners: Game Table 5 (Yellow)       Game Table 2 (Blue)       Game Table 2 (Red)       
+Red 4
+Blue 1
 Purple 0
 Green 0
-Yellow 0
-White 0
+Yellow 1
+White 1
 
 Current Time: 7
 
 Number of Game Tables: 6
-Number of Players: 24
-Number of Games: 6
+Number of Players: 32
+Number of Games: 7
 Current Game Winners: 
-Red 6
-Blue 0
+Red 4
+Blue 1
 Purple 0
 Green 0
-Yellow 0
-White 0
+Yellow 1
+White 1
 
 Current Time: 8
 
 Number of Game Tables: 6
-Number of Players: 24
-Number of Games: 6
-Current Game Winners: 
-Red 6
-Blue 0
-Purple 0
-Green 0
-Yellow 0
-White 0
+Number of Players: 30
+Number of Games: 11
+Current Game Winners: Game Table 1 (Green)       Game Table 6 (Purple)       Game Table 6 (Purple)       Game Table 6 (Red)       
+Red 5
+Blue 1
+Purple 2
+Green 1
+Yellow 1
+White 1
 
 Current Time: 9
 
 Number of Game Tables: 6
-Number of Players: 24
-Number of Games: 6
+Number of Players: 30
+Number of Games: 11
 Current Game Winners: 
-Red 6
-Blue 0
-Purple 0
-Green 0
-Yellow 0
-White 0
+Red 5
+Blue 1
+Purple 2
+Green 1
+Yellow 1
+White 1
 
 Current Time: 10
 
 Number of Game Tables: 6
-Number of Players: 18
-Number of Games: 12
-Current Game Winners: Game Table 1 (Purple)       Game Table 2 (Purple)       Game Table 3 (Purple)       Game Table 4 (Purple)       Game Table 5 (Purple)       Game Table 6 (Purple)       
+Number of Players: 30
+Number of Games: 11
+Current Game Winners: 
+Red 5
+Blue 1
+Purple 2
+Green 1
+Yellow 1
+White 1
+
+Current Time: 11
+
+Number of Game Tables: 6
+Number of Players: 29
+Number of Games: 14
+Current Game Winners: Game Table 5 (Blue)       Game Table 2 (Red)       Game Table 6 (Green)       
 Red 6
-Blue 0
+Blue 2
+Purple 2
+Green 2
+Yellow 1
+White 1
+
+Current Time: 12
+
+Number of Game Tables: 6
+Number of Players: 29
+Number of Games: 14
+Current Game Winners: 
+Red 6
+Blue 2
+Purple 2
+Green 2
+Yellow 1
+White 1
+
+Current Time: 13
+
+Number of Game Tables: 6
+Number of Players: 27
+Number of Games: 15
+Current Game Winners: Game Table 1 (Green)       
+Red 6
+Blue 2
+Purple 2
+Green 3
+Yellow 1
+White 1
+
+Current Time: 14
+
+Number of Game Tables: 6
+Number of Players: 29
+Number of Games: 16
+Current Game Winners: Game Table 6 (Red)       
+Red 7
+Blue 2
+Purple 2
+Green 3
+Yellow 1
+White 1
+
+Current Time: 15
+
+Number of Game Tables: 6
+Number of Players: 27
+Number of Games: 17
+Current Game Winners: Game Table 2 (White)       
+Red 7
+Blue 2
+Purple 2
+Green 3
+Yellow 1
+White 2
+
+Current Time: 16
+
+Number of Game Tables: 6
+Number of Players: 25
+Number of Games: 20
+Current Game Winners: Game Table 5 (White)       Game Table 1 (Purple)       Game Table 5 (Yellow)       
+Red 7
+Blue 2
+Purple 3
+Green 3
+Yellow 2
+White 3
+
+Current Time: 17
+
+Number of Game Tables: 6
+Number of Players: 28
+Number of Games: 22
+Current Game Winners: Game Table 2 (White)       Game Table 2 (Green)       
+Red 7
+Blue 2
+Purple 3
+Green 4
+Yellow 2
+White 4
+
+Current Time: 18
+
+Number of Game Tables: 6
+Number of Players: 31
+Number of Games: 23
+Current Game Winners: Game Table 5 (Green)       
+Red 7
+Blue 2
+Purple 3
+Green 5
+Yellow 2
+White 4
+
+Current Time: 19
+
+Number of Game Tables: 6
+Number of Players: 31
+Number of Games: 24
+Current Game Winners: Game Table 6 (Blue)       
+Red 7
+Blue 3
+Purple 3
+Green 5
+Yellow 2
+White 4
+
+Current Time: 20
+
+Number of Game Tables: 6
+Number of Players: 30
+Number of Games: 25
+Current Game Winners: Game Table 1 (Yellow)       
+Red 7
+Blue 3
+Purple 3
+Green 5
+Yellow 3
+White 4
+
+Current Time: 21
+
+Number of Game Tables: 6
+Number of Players: 30
+Number of Games: 25
+Current Game Winners: 
+Red 7
+Blue 3
+Purple 3
+Green 5
+Yellow 3
+White 4
+
+Current Time: 22
+
+Number of Game Tables: 6
+Number of Players: 29
+Number of Games: 26
+Current Game Winners: Game Table 2 (Purple)       
+Red 7
+Blue 3
+Purple 4
+Green 5
+Yellow 3
+White 4
+
+Current Time: 23
+
+Number of Game Tables: 6
+Number of Players: 27
+Number of Games: 30
+Current Game Winners: Game Table 5 (Blue)       Game Table 1 (Purple)       Game Table 1 (Green)       Game Table 1 (Red)       
+Red 8
+Blue 4
+Purple 5
+Green 6
+Yellow 3
+White 4
+
+Current Time: 24
+
+Number of Game Tables: 6
+Number of Players: 27
+Number of Games: 31
+Current Game Winners: Game Table 6 (Yellow)       
+Red 8
+Blue 4
+Purple 5
+Green 6
+Yellow 4
+White 4
+
+Current Time: 25
+
+Number of Game Tables: 6
+Number of Players: 27
+Number of Games: 31
+Current Game Winners: 
+Red 8
+Blue 4
+Purple 5
+Green 6
+Yellow 4
+White 4
+
+Current Time: 26
+
+Number of Game Tables: 6
+Number of Players: 30
+Number of Games: 34
+Current Game Winners: Game Table 2 (Green)       Game Table 5 (Yellow)       Game Table 1 (White)       
+Red 8
+Blue 4
+Purple 5
+Green 7
+Yellow 5
+White 5
+
+Current Time: 27
+
+Number of Game Tables: 6
+Number of Players: 30
+Number of Games: 34
+Current Game Winners: 
+Red 8
+Blue 4
+Purple 5
+Green 7
+Yellow 5
+White 5
+
+Current Time: 28
+
+Number of Game Tables: 6
+Number of Players: 30
+Number of Games: 34
+Current Game Winners: 
+Red 8
+Blue 4
+Purple 5
+Green 7
+Yellow 5
+White 5
+
+Current Time: 29
+
+Number of Game Tables: 6
+Number of Players: 30
+Number of Games: 35
+Current Game Winners: Game Table 6 (White)       
+Red 8
+Blue 4
+Purple 5
+Green 7
+Yellow 5
+White 6
+
+Current Time: 30
+
+Number of Game Tables: 6
+Number of Players: 31
+Number of Games: 39
+Current Game Winners: Game Table 2 (Blue)       Game Table 5 (Blue)       Game Table 5 (Green)       Game Table 5 (White)       
+Red 8
+Blue 6
+Purple 5
+Green 8
+Yellow 5
+White 7
+
+Current Time: 31
+
+Number of Game Tables: 6
+Number of Players: 28
+Number of Games: 40
+Current Game Winners: Game Table 1 (Green)       
+Red 8
+Blue 6
+Purple 5
+Green 9
+Yellow 5
+White 7
+
+Current Time: 32
+
+Number of Game Tables: 6
+Number of Players: 28
+Number of Games: 40
+Current Game Winners: 
+Red 8
+Blue 6
+Purple 5
+Green 9
+Yellow 5
+White 7
+
+Current Time: 33
+
+Number of Game Tables: 6
+Number of Players: 30
+Number of Games: 41
+Current Game Winners: Game Table 1 (Purple)       
+Red 8
+Blue 6
 Purple 6
-Green 0
-Yellow 0
-White 0
+Green 9
+Yellow 5
+White 7
+
+Current Time: 34
+
+Number of Game Tables: 6
+Number of Players: 31
+Number of Games: 43
+Current Game Winners: Game Table 6 (Green)       Game Table 2 (Blue)       
+Red 8
+Blue 7
+Purple 6
+Green 10
+Yellow 5
+White 7
+
+Current Time: 35
+
+Number of Game Tables: 6
+Number of Players: 28
+Number of Games: 45
+Current Game Winners: Game Table 5 (Green)       Game Table 5 (Blue)       
+Red 8
+Blue 8
+Purple 6
+Green 11
+Yellow 5
+White 7
+
+Current Time: 36
+
+Number of Game Tables: 6
+Number of Players: 28
+Number of Games: 45
+Current Game Winners: 
+Red 8
+Blue 8
+Purple 6
+Green 11
+Yellow 5
+White 7
+
+Current Time: 37
+
+Number of Game Tables: 6
+Number of Players: 31
+Number of Games: 47
+Current Game Winners: Game Table 1 (Red)       Game Table 5 (White)       
+Red 9
+Blue 8
+Purple 6
+Green 11
+Yellow 5
+White 8
+
+Current Time: 38
+
+Number of Game Tables: 6
+Number of Players: 31
+Number of Games: 47
+Current Game Winners: 
+Red 9
+Blue 8
+Purple 6
+Green 11
+Yellow 5
+White 8
+
+Current Time: 39
+
+Number of Game Tables: 6
+Number of Players: 31
+Number of Games: 50
+Current Game Winners: Game Table 6 (Blue)       Game Table 2 (Blue)       Game Table 6 (White)       
+Red 9
+Blue 10
+Purple 6
+Green 11
+Yellow 5
+White 9
+
+Current Time: 40
+
+Number of Game Tables: 6
+Number of Players: 31
+Number of Games: 50
+Current Game Winners: 
+Red 9
+Blue 10
+Purple 6
+Green 11
+Yellow 5
+White 9
+
+Current Time: 41
+
+Number of Game Tables: 6
+Number of Players: 31
+Number of Games: 51
+Current Game Winners: Game Table 5 (White)       
+Red 9
+Blue 10
+Purple 6
+Green 11
+Yellow 5
+White 10
+
+Current Time: 42
+
+Number of Game Tables: 6
+Number of Players: 28
+Number of Games: 52
+Current Game Winners: Game Table 1 (White)       
+Red 9
+Blue 10
+Purple 6
+Green 11
+Yellow 5
+White 11
+
+Current Time: 43
+
+Number of Game Tables: 6
+Number of Players: 28
+Number of Games: 52
+Current Game Winners: 
+Red 9
+Blue 10
+Purple 6
+Green 11
+Yellow 5
+White 11
+
+Current Time: 44
+
+Number of Game Tables: 6
+Number of Players: 25
+Number of Games: 55
+Current Game Winners: Game Table 2 (Yellow)       Game Table 6 (Yellow)       Game Table 1 (White)       
+Red 9
+Blue 10
+Purple 6
+Green 11
+Yellow 7
+White 12
+
+Current Time: 45
+
+Number of Game Tables: 6
+Number of Players: 23
+Number of Games: 56
+Current Game Winners: Game Table 5 (Blue)       
+Red 9
+Blue 11
+Purple 6
+Green 11
+Yellow 7
+White 12
+
+Current Time: 46
+
+Number of Game Tables: 6
+Number of Players: 25
+Number of Games: 57
+Current Game Winners: Game Table 6 (White)       
+Red 9
+Blue 11
+Purple 6
+Green 11
+Yellow 7
+White 13
+
+Current Time: 47
+
+Number of Game Tables: 6
+Number of Players: 25
+Number of Games: 59
+Current Game Winners: Game Table 2 (Yellow)       Game Table 5 (Yellow)       
+Red 9
+Blue 11
+Purple 6
+Green 11
+Yellow 9
+White 13
+
+Current Time: 48
+
+Number of Game Tables: 6
+Number of Players: 24
+Number of Games: 60
+Current Game Winners: Game Table 1 (Yellow)       
+Red 9
+Blue 11
+Purple 6
+Green 11
+Yellow 10
+White 13
+
+Current Time: 49
+
+Number of Game Tables: 6
+Number of Players: 24
+Number of Games: 61
+Current Game Winners: Game Table 2 (Purple)       
+Red 9
+Blue 11
+Purple 7
+Green 11
+Yellow 10
+White 13
+
+Current Time: 50
+
+Number of Game Tables: 6
+Number of Players: 21
+Number of Games: 63
+Current Game Winners: Game Table 6 (Red)       Game Table 5 (Green)       
+Red 10
+Blue 11
+Purple 7
+Green 12
+Yellow 10
+White 13
+
+Current Time: 51
+
+Number of Game Tables: 6
+Number of Players: 24
+Number of Games: 66
+Current Game Winners: Game Table 1 (Green)       Game Table 2 (Yellow)       Game Table 1 (Yellow)       
+Red 10
+Blue 11
+Purple 7
+Green 13
+Yellow 12
+White 13
+
+Current Time: 52
+
+Number of Game Tables: 6
+Number of Players: 25
+Number of Games: 70
+Current Game Winners: Game Table 6 (Red)       Game Table 5 (Blue)       Game Table 6 (Red)       Game Table 5 (White)       
+Red 12
+Blue 12
+Purple 7
+Green 13
+Yellow 12
+White 14
+
+Current Time: 53
+
+Number of Game Tables: 6
+Number of Players: 25
+Number of Games: 70
+Current Game Winners: 
+Red 12
+Blue 12
+Purple 7
+Green 13
+Yellow 12
+White 14
+
+Current Time: 54
+
+Number of Game Tables: 6
+Number of Players: 29
+Number of Games: 72
+Current Game Winners: Game Table 1 (Blue)       Game Table 6 (Blue)       
+Red 12
+Blue 14
+Purple 7
+Green 13
+Yellow 12
+White 14
+
+Current Time: 55
+
+Number of Game Tables: 6
+Number of Players: 30
+Number of Games: 73
+Current Game Winners: Game Table 5 (Red)       
+Red 13
+Blue 14
+Purple 7
+Green 13
+Yellow 12
+White 14
+
+Current Time: 56
+
+Number of Game Tables: 6
+Number of Players: 29
+Number of Games: 74
+Current Game Winners: Game Table 2 (Red)       
+Red 14
+Blue 14
+Purple 7
+Green 13
+Yellow 12
+White 14
+
+Current Time: 57
+
+Number of Game Tables: 6
+Number of Players: 29
+Number of Games: 74
+Current Game Winners: 
+Red 14
+Blue 14
+Purple 7
+Green 13
+Yellow 12
+White 14
+
+Current Time: 58
+
+Number of Game Tables: 6
+Number of Players: 29
+Number of Games: 75
+Current Game Winners: Game Table 1 (Red)       
+Red 15
+Blue 14
+Purple 7
+Green 13
+Yellow 12
+White 14
+
+Current Time: 59
+
+Number of Game Tables: 6
+Number of Players: 28
+Number of Games: 77
+Current Game Winners: Game Table 6 (Red)       Game Table 5 (Yellow)       
+Red 16
+Blue 14
+Purple 7
+Green 13
+Yellow 13
+White 14
+
+Current Time: 60
+
+Number of Game Tables: 6
+Number of Players: 26
+Number of Games: 79
+Current Game Winners: Game Table 2 (Blue)       Game Table 2 (Purple)       
+Red 16
+Blue 15
+Purple 8
+Green 13
+Yellow 13
+White 14
+
+Current Time: 61
+
+Number of Game Tables: 6
+Number of Players: 26
+Number of Games: 79
+Current Game Winners: 
+Red 16
+Blue 15
+Purple 8
+Green 13
+Yellow 13
+White 14
+
+Current Time: 62
+
+Number of Game Tables: 6
+Number of Players: 28
+Number of Games: 82
+Current Game Winners: Game Table 1 (Yellow)       Game Table 5 (Purple)       Game Table 2 (Yellow)       
+Red 16
+Blue 15
+Purple 9
+Green 13
+Yellow 15
+White 14
+
+Current Time: 63
+
+Number of Game Tables: 6
+Number of Players: 28
+Number of Games: 82
+Current Game Winners: 
+Red 16
+Blue 15
+Purple 9
+Green 13
+Yellow 15
+White 14
+
+Current Time: 64
+
+Number of Game Tables: 6
+Number of Players: 26
+Number of Games: 83
+Current Game Winners: Game Table 6 (Yellow)       
+Red 16
+Blue 15
+Purple 9
+Green 13
+Yellow 16
+White 14
+
+Current Time: 65
+
+Number of Game Tables: 6
+Number of Players: 25
+Number of Games: 88
+Current Game Winners: Game Table 1 (Green)       Game Table 5 (Green)       Game Table 1 (White)       Game Table 5 (White)       Game Table 1 (Green)       
+Red 16
+Blue 15
+Purple 9
+Green 16
+Yellow 16
+White 16
+
+Current Time: 66
+
+Number of Game Tables: 6
+Number of Players: 25
+Number of Games: 88
+Current Game Winners: 
+Red 16
+Blue 15
+Purple 9
+Green 16
+Yellow 16
+White 16
+
+Current Time: 67
+
+Number of Game Tables: 6
+Number of Players: 26
+Number of Games: 91
+Current Game Winners: Game Table 2 (Purple)       Game Table 6 (Red)       Game Table 5 (Yellow)       
+Red 17
+Blue 15
+Purple 10
+Green 16
+Yellow 17
+White 16
+
+Current Time: 68
+
+Number of Game Tables: 6
+Number of Players: 26
+Number of Games: 92
+Current Game Winners: Game Table 1 (Yellow)       
+Red 17
+Blue 15
+Purple 10
+Green 16
+Yellow 18
+White 16
+
+Current Time: 69
+
+Number of Game Tables: 6
+Number of Players: 26
+Number of Games: 92
+Current Game Winners: 
+Red 17
+Blue 15
+Purple 10
+Green 16
+Yellow 18
+White 16
+
+Current Time: 70
+
+Number of Game Tables: 6
+Number of Players: 25
+Number of Games: 94
+Current Game Winners: Game Table 2 (Yellow)       Game Table 6 (Yellow)       
+Red 17
+Blue 15
+Purple 10
+Green 16
+Yellow 20
+White 16
+
+Current Time: 71
+
+Number of Game Tables: 6
+Number of Players: 26
+Number of Games: 95
+Current Game Winners: Game Table 1 (Purple)       
+Red 17
+Blue 15
+Purple 11
+Green 16
+Yellow 20
+White 16
+
+Current Time: 72
+
+Number of Game Tables: 6
+Number of Players: 29
+Number of Games: 98
+Current Game Winners: Game Table 5 (White)       Game Table 2 (Yellow)       Game Table 5 (Purple)       
+Red 17
+Blue 15
+Purple 12
+Green 16
+Yellow 21
+White 17
+
+Current Time: 73
+
+Number of Game Tables: 6
+Number of Players: 28
+Number of Games: 99
+Current Game Winners: Game Table 6 (Green)       
+Red 17
+Blue 15
+Purple 12
+Green 17
+Yellow 21
+White 17
+
+Current Time: 74
+
+Number of Game Tables: 6
+Number of Players: 28
+Number of Games: 99
+Current Game Winners: 
+Red 17
+Blue 15
+Purple 12
+Green 17
+Yellow 21
+White 17
+
+Current Time: 75
+
+Number of Game Tables: 6
+Number of Players: 31
+Number of Games: 101
+Current Game Winners: Game Table 1 (Green)       Game Table 6 (Purple)       
+Red 17
+Blue 15
+Purple 13
+Green 18
+Yellow 21
+White 17
+
+Current Time: 76
+
+Number of Game Tables: 6
+Number of Players: 31
+Number of Games: 101
+Current Game Winners: 
+Red 17
+Blue 15
+Purple 13
+Green 18
+Yellow 21
+White 17
+
+Current Time: 77
+
+Number of Game Tables: 6
+Number of Players: 27
+Number of Games: 104
+Current Game Winners: Game Table 2 (Red)       Game Table 5 (Red)       Game Table 2 (Blue)       
+Red 19
+Blue 16
+Purple 13
+Green 18
+Yellow 21
+White 17
+
+Current Time: 78
+
+Number of Game Tables: 6
+Number of Players: 27
+Number of Games: 104
+Current Game Winners: 
+Red 19
+Blue 16
+Purple 13
+Green 18
+Yellow 21
+White 17
+
+Current Time: 79
+
+Number of Game Tables: 6
+Number of Players: 25
+Number of Games: 106
+Current Game Winners: Game Table 1 (Blue)       Game Table 2 (White)       
+Red 19
+Blue 17
+Purple 13
+Green 18
+Yellow 21
+White 18
+
+Current Time: 80
+
+Number of Game Tables: 6
+Number of Players: 25
+Number of Games: 107
+Current Game Winners: Game Table 6 (Yellow)       
+Red 19
+Blue 17
+Purple 13
+Green 18
+Yellow 22
+White 18
+
+Current Time: 81
+
+Number of Game Tables: 6
+Number of Players: 25
+Number of Games: 113
+Current Game Winners: Game Table 5 (Green)       Game Table 1 (Yellow)       Game Table 2 (Yellow)       Game Table 1 (Yellow)       Game Table 2 (Red)       Game Table 1 (Purple)       
+Red 20
+Blue 17
+Purple 14
+Green 19
+Yellow 25
+White 18
+
+Current Time: 82
+
+Number of Game Tables: 6
+Number of Players: 25
+Number of Games: 113
+Current Game Winners: 
+Red 20
+Blue 17
+Purple 14
+Green 19
+Yellow 25
+White 18
+
+Current Time: 83
+
+Number of Game Tables: 6
+Number of Players: 27
+Number of Games: 114
+Current Game Winners: Game Table 1 (Red)       
+Red 21
+Blue 17
+Purple 14
+Green 19
+Yellow 25
+White 18
+
+Current Time: 84
+
+Number of Game Tables: 6
+Number of Players: 27
+Number of Games: 116
+Current Game Winners: Game Table 5 (White)       Game Table 2 (Red)       
+Red 22
+Blue 17
+Purple 14
+Green 19
+Yellow 25
+White 19
+
+Current Time: 85
+
+Number of Game Tables: 6
+Number of Players: 25
+Number of Games: 118
+Current Game Winners: Game Table 6 (Blue)       Game Table 6 (Purple)       
+Red 22
+Blue 18
+Purple 15
+Green 19
+Yellow 25
+White 19
+
+Current Time: 86
+
+Number of Game Tables: 6
+Number of Players: 27
+Number of Games: 119
+Current Game Winners: Game Table 5 (White)       
+Red 22
+Blue 18
+Purple 15
+Green 19
+Yellow 25
+White 20
+
+Current Time: 87
+
+Number of Game Tables: 6
+Number of Players: 26
+Number of Games: 120
+Current Game Winners: Game Table 1 (Red)       
+Red 23
+Blue 18
+Purple 15
+Green 19
+Yellow 25
+White 20
+
+Current Time: 88
+
+Number of Game Tables: 6
+Number of Players: 25
+Number of Games: 122
+Current Game Winners: Game Table 2 (Red)       Game Table 6 (Red)       
+Red 25
+Blue 18
+Purple 15
+Green 19
+Yellow 25
+White 20
+
+Current Time: 89
+
+Number of Game Tables: 6
+Number of Players: 25
+Number of Games: 122
+Current Game Winners: 
+Red 25
+Blue 18
+Purple 15
+Green 19
+Yellow 25
+White 20
+
+Current Time: 90
+
+Number of Game Tables: 6
+Number of Players: 28
+Number of Games: 125
+Current Game Winners: Game Table 5 (White)       Game Table 1 (Green)       Game Table 6 (Red)       
+Red 26
+Blue 18
+Purple 15
+Green 20
+Yellow 25
+White 21
+
+Current Time: 91
+
+Number of Game Tables: 6
+Number of Players: 28
+Number of Games: 125
+Current Game Winners: 
+Red 26
+Blue 18
+Purple 15
+Green 20
+Yellow 25
+White 21
+
+Current Time: 92
+
+Number of Game Tables: 6
+Number of Players: 28
+Number of Games: 126
+Current Game Winners: Game Table 2 (Red)       
+Red 27
+Blue 18
+Purple 15
+Green 20
+Yellow 25
+White 21
+
+Current Time: 93
+
+Number of Game Tables: 6
+Number of Players: 30
+Number of Games: 128
+Current Game Winners: Game Table 1 (Yellow)       Game Table 1 (Purple)       
+Red 27
+Blue 18
+Purple 16
+Green 20
+Yellow 26
+White 21
+
+Current Time: 94
+
+Number of Game Tables: 6
+Number of Players: 31
+Number of Games: 129
+Current Game Winners: Game Table 5 (Red)       
+Red 28
+Blue 18
+Purple 16
+Green 20
+Yellow 26
+White 21
+
+Current Time: 95
+
+Number of Game Tables: 6
+Number of Players: 31
+Number of Games: 130
+Current Game Winners: Game Table 6 (White)       
+Red 28
+Blue 18
+Purple 16
+Green 20
+Yellow 26
+White 22
+
+Current Time: 96
+
+Number of Game Tables: 6
+Number of Players: 30
+Number of Games: 131
+Current Game Winners: Game Table 2 (Blue)       
+Red 28
+Blue 19
+Purple 16
+Green 20
+Yellow 26
+White 22
+
+Current Time: 97
+
+Number of Game Tables: 6
+Number of Players: 30
+Number of Games: 131
+Current Game Winners: 
+Red 28
+Blue 19
+Purple 16
+Green 20
+Yellow 26
+White 22
+
+Current Time: 98
+
+Number of Game Tables: 6
+Number of Players: 27
+Number of Games: 132
+Current Game Winners: Game Table 1 (Yellow)       
+Red 28
+Blue 19
+Purple 16
+Green 20
+Yellow 27
+White 22
+
+Current Time: 99
+
+Number of Game Tables: 6
+Number of Players: 25
+Number of Games: 134
+Current Game Winners: Game Table 5 (Red)       Game Table 2 (Red)       
+Red 30
+Blue 19
+Purple 16
+Green 20
+Yellow 27
+White 22
+
+Current Time: 100
+
+Number of Game Tables: 6
+Number of Players: 26
+Number of Games: 136
+Current Game Winners: Game Table 6 (White)       Game Table 1 (Red)       
+Red 31
+Blue 19
+Purple 16
+Green 20
+Yellow 27
+White 23
 

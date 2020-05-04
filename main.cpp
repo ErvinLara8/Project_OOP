@@ -14,18 +14,18 @@ int main(){
 
     // int numOfPlayers = 3;
 
-    // // cout << "Enter Number of Players: ";
+    // cout << "Enter Number of Players: ";
 
-    // // while (true)
-    // // {
-    // //     cin >> numOfPlayers;
+    // while (true)
+    // {
+    //     cin >> numOfPlayers;
 
-    // //     if(numOfPlayers >1 || numOfPlayers < 7){
-    // //         break;
-    // //     }else{
-    // //         cout << "Please enter a number between 2 and 6: ";
-    // //     }
-    // // }
+    //     if(numOfPlayers >1 || numOfPlayers < 7){
+    //         break;
+    //     }else{
+    //         cout << "Please enter a number between 2 and 6: ";
+    //     }
+    // }
     
     // Game game1;
 
@@ -81,9 +81,9 @@ int main(){
 
 	int end_of_simulation_time = 10;
 
-    // cout << "Enter Total length of time: ";
+    cout << "Enter Total length of time: ";
 
-    // cin >> end_of_simulation_time;
+    cin >> end_of_simulation_time;
 
     ofstream outputFile;
 
@@ -92,6 +92,4 @@ int main(){
     arcade1.Initialize(end_of_simulation_time);
 
     arcade1.runArcade();
-
-    arcade1.~Arcade();
 }

@@ -111,7 +111,7 @@ bool Player::moveToken(Square *** & board, int ln, int playerNum){
 
 	bool moved_opponent = false;
 
-	bool initialVertical;
+	bool initialVertical = false;
 	Token myToken;
 
 	// loop checking lane choosen, main priority is to move a token forward or get a token out of the path of a trap

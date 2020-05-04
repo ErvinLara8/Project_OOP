@@ -43,6 +43,8 @@ class Arcade {
         // method to begin the loop that will run the arcade 
 		void runArcade();
 
+		int myrandom (int i);
+
         // destructor 
         ~Arcade();
 };

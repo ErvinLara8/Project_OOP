@@ -18,6 +18,8 @@ class TimingWheel {
 		unordered_map<string, int> stats; // (key,value) -> (color, wins)
 		string finishingGamesStats; //string thaty hold the current winners
 
+		vector <int> ranNumbers;
+
 
 	public:
 		// constructor 

@@ -3,7 +3,11 @@
 #include <unordered_map> 
 #include <vector>
 #include <string>
+#include <time.h>
 #include <stdlib.h> 
+#include <algorithm>    // std::random_shuffle
+#include <chrono>       // std::chrono::system_clock
+#include <random>       // std::default_random_engine
 
 using namespace std;
 
@@ -23,6 +27,9 @@ TimingWheel::TimingWheel() {
     stats["White"] =  0;
 
     finishingGamesStats = "";
+
+    for (int i=2; i<7; ++i) ranNumbers.push_back(i);
+
 }
 
 // method to insert a GameTable in a specific slot in the timing wheel 
@@ -34,6 +41,10 @@ void TimingWheel::insert(int play_time, GameTable *p1) {
 void TimingWheel::schedule() {
 
     srand(time(NULL));
+
+    unsigned seed = chrono::system_clock::now().time_since_epoch().count();
+
+    auto rng = std::default_random_engine (seed);
 
     // hold the time slot relevant to the current time slot 
     int updatedTimeSlot = 0;
@@ -89,8 +100,10 @@ void TimingWheel::schedule() {
 
         // creatign new game 
 
+        shuffle (ranNumbers.begin(), ranNumbers.end(), rng);
+
         // creating new number of players 
-        commingPlayers = (rand() % 4) + 2;
+        commingPlayers = ranNumbers[0];
 
         // updating the spot where the Gametable will go based on the new number of players 
         updatedTimeSlot = (curr_slot + commingPlayers) % 6;

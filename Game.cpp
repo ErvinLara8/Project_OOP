@@ -13,6 +13,7 @@
 #include "Player.h"
 #include <thread>
 #include <chrono>
+#include <random>       // std::default_random_engine
 
 using namespace std;
 
@@ -465,46 +466,38 @@ void Game::setPlayers(int numOfPlayers){
 
 	string color;
 
-	// int colorPicked = 0;
+	int colorPicked = 0;
 
-	 bool pickedRed, pickedGreen, pickedBlue, pickedPurple, pickedYellow, pickedWhite = false;
+	vector <int> ranColors;
+
+	for (int i=0; i<6; ++i) ranColors.push_back(i);
+
+	unsigned seed = chrono::system_clock::now().time_since_epoch().count();
+
+    auto rng = std::default_random_engine (seed);
 
 	// First, create the instances of players and push them to the queue
 	for (int i = 0; i < numOfPlayers; i++) {
 
-		// while (true)
-		// {
-			
-		// colorPicked = rand() % 6;
-		
+		shuffle (ranColors.begin(), ranColors.end(), rng);
 
-		if(i == 0 ){
+		colorPicked = ranColors[ranColors.size() -1];
+
+		if(colorPicked == 0 ){
 			color = "Red";
-			pickedRed = true;
-			// break;
-		}else if(i== 1 ){
+		}else if(colorPicked== 1 ){
 			color = "Green";
-			pickedGreen = true;
-			// break;
-		}else if(i == 2 ){
+		}else if(colorPicked == 2 ){
 			color = "Blue";
-			pickedBlue = true;
-			// break;
-		}else if(i == 3 ){
+		}else if(colorPicked == 3 ){
 			color = "Purple";
-			pickedPurple = true;
-			// break;
-		}else if(i== 4 ){
+		}else if(colorPicked == 4 ){
 			color = "Yellow";
-			pickedYellow = true;
-			// break;
-		}else if(i== 5){
+		}else if(colorPicked == 5){
 			color = "White";
-			pickedWhite = true;
-			// break;
 		}
 
-		// }
+		ranColors.pop_back();
 
 		Player p(i +1 ,color);
 		playerTurns.push(p);
